@@ -2,6 +2,11 @@
 
 _College project_
 
+## Group 
+ - Gabriel Santos dos Passos
+ - Lucas Reis
+ - Eduardo Amroginski
+
 ## Objectives
 
 * Create CRUD of users
