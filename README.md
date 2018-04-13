@@ -15,8 +15,9 @@ _College project_
 * Create front 
 * User can create their own trainings
 
-### Initial Model 
+### Initial Models 
 
+_User Model_
 ```javascript
 {
   "nome": "Gabriel",
@@ -28,6 +29,53 @@ _College project_
     "modalidade": "semestral",
     "mensalidade": 110.90
   },
+  "treinos":[
+    {
+      "nomeTreino":"Treino de Peitoral",
+      "exercicios":[
+        {
+          "nomeExercicio":"supino reto",
+          "peso": 25,
+          "repeticoes": 12,
+          "series" : 3,
+          "descanco" : "60s"
+        },
+        {
+          "nomeExercicio":"voador",
+          "peso": 50,
+          "repeticoes": 10,
+          "series" : 4,
+          "descanco" : "30s"
+        }
+      ]
+    },
+    {
+      "nomeTreino":"Treino de Costas",
+      "exercicios":[
+        {
+          "nomeExercicio":"Barra Supinada",
+          "peso": 0,
+          "repeticoes": 12,
+          "series" : 3,
+          "descanco" : "90s"
+        },
+        {
+          "nomeExercicio":"remada",
+          "peso": 50,
+          "repeticoes": 10,
+          "series" : 4,
+          "descanco" : "45s"
+        }
+      ]
+    }
+  ]
+}
+```
+
+_Treinos Model_
+
+```javascript
+{
   "treinos":[
     {
       "nomeTreino":"Treino de Peitoral",
