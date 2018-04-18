@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/usuarios', function (req, res) {
-    res.send('Lista de Usuários!');
+    res.send('Lista de Usuários!!!');
 });
 
 app.get('/usuarios/id', function (req, res) {
