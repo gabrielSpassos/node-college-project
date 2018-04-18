@@ -37,6 +37,6 @@ app.put('/exercicios/id', function (req, res) {
     res.send('exercicio {id} alterado!');
 });
 
-app.listen(4500, function () {
-    console.log('Exemplo de app escutando na porta 4500!');
+app.listen(3300, function () {
+    console.log('Exemplo de app escutando na porta 3300!');
 });
