@@ -1,0 +1,19 @@
+{
+  "name": "gym-service",
+  "version": "1.0.0",
+  "description": "Node App ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielSpassos/gym-service.git"
+  },
+  "author": "Eduardo Amroginski, Gabriel Passos, Lucas Reis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielSpassos/gym-service/issues"
+  },
+  "homepage": "https://github.com/gabrielSpassos/gym-service#readme"
+}
