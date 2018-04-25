@@ -1,20 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
         <title>Meu Perfil</title>
+        <meta charset="UTF-8"/>
     </head>
 
     <body>
         <form>
             <fieldset>
                 <legend>Dados do Usuário</legend>
-                <p>Nome Completo: <input type="text" name="nome"></p> 
-                <p>Idade: <input type="number" name="idade"></p>
-                <p> CPF: <input type="text" name="cpf"></p>
-                <p>Sexo: <input type="radio" name="sexo"></p>
-                <p> Peso: <input type="number" name="peso"></p>
-                <p> Altura: <input type="number" name="altura"></p>
-                <p> IMC: <input type="number" name="imc"></p>
+                <p>
+                    Nome Completo: <input type="text" name="nome">
+                    <img id="editField" width="25px" src="_images/edit.png">
+                </p> 
+
+                <p>
+                    Idade: <input type="number" name="idade">
+                    <img id="editField" width="25px" src="_images/edit.png">
+                </p>
+
+                <p> 
+                    CPF: <input type="text" name="cpf">
+                    <img id="editField" width="25px" src="_images/edit.png">
+                </p>
+
+                <fieldset>
+                    <legend>Sexo</legend>
+                    Masculino: <input type="radio" name="sex_masc">
+                    Feminino: <input type="radio" name="sex_fem">
+                    
+                </fieldset>
+
+                <p> 
+                    Peso: <input type="number" name="peso">
+                    <img id="editField" width="25px" src="_images/edit.png">
+                </p>
+
+                <p> 
+                    Altura: <input type="number" name="altura">
+                    <img id="editField" width="25px" src="_images/edit.png">
+                </p>
+
+                <p> 
+                    IMC: <input type="number" name="imc">
+                    <img id="editField" width="25px" src="_images/edit.png">
+                </p>
             
             </fieldset> 
 
@@ -22,17 +52,13 @@
                 <legend>Plano</legend>
                 <select name="tipoPlano"> 
                     <option value="mensal">Mensal</option>
-                    <option value="mensal">Semestral</option>
-                    <option value="mensal">Anual</option>
+                    <option value="trimestral">Trimestral</option>
+                    <option value="semestral">Semestral</option>
+                    <option value="anual">Anual</option>
                 </select>
-
-
             </fieldset>
 
         </form>
-        
-
-
     </body>
 
 </html>
