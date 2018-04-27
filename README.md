@@ -3,9 +3,13 @@
 _College project_
 
 ## Group 
- - Gabriel Santos dos Passos
- - Lucas Reis
- - Eduardo Amroginski
+ - [Gabriel Santos dos Passos](https://github.com/gabrielSpassos) 
+ - [Lucas Reis](https://github.com/lucasship)
+ - [Eduardo Amroginski](https://github.com/CrazyAMK)
+ 
+## Professor
+
+ - [Giovane Barcelos](https://github.com/giovanebarcelos)
 
 ## Objectives
 
