@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/gabrielSpassos/gym-service/issues"
   },
-  "homepage": "https://github.com/gabrielSpassos/gym-service#readme"
+  "homepage": "https://github.com/gabrielSpassos/gym-service#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.8",
+    "mongoose": "^5.0.17",
+    "morgan": "^1.9.0"
+  }
 }
