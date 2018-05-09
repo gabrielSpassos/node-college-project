@@ -2,17 +2,31 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var app = express();
 
-mongoose.connect("mongodb://localhost:27017/gym");
+//mongoose.connect("mongodb://localhost:27017/gym");
 
-var dbMongo = mongoose.connection;
+//var dbMongo = mongoose.connection;
 
-dbMongo.on('error', console.error.bind(console, 'Não foi possível se conectar no MongoDB!'));
-dbMongo.once('open', function () {
-	console.log('Aplicação conectada no MongoDB');
+// dbMongo.on('error', console.error.bind(console, 'Não foi possível se conectar no MongoDB!'));
+// dbMongo.once('open', function () {
+// 	console.log('Aplicação conectada no MongoDB');
+// });
+
+const connection = mysql.createConnection({
+  host     : 'localhost',
+  port     : 3306,
+  user     : 'root',
+  password : 'admin',
+  database : 'BANCO_FAKE'
 });
+
+connection.connect(function(err){
+  if(err) return console.log(err);
+  console.log('conectou!');
+})
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -22,10 +36,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-var treino = mongoose.model('treino',
-	new mongoose.Schema({
-        nomeTreino: { type: String },
-    }));
+// var treino = mongoose.model('treino',
+// 	new mongoose.Schema({
+//         nomeTreino: { type: String },
+//     }));
     
 app.get('/usuarios', function (req, res) {
     res.send('Lista de Usuários!!!');
@@ -65,6 +79,23 @@ app.get('/treinos/id', function (req, res) {
 	});
 });
 
+function execSQLQuery(sqlQry, connection, res){
+    connection.query(sqlQry, function(error, results, fields){
+        if(error) 
+          res.json(error);
+        else
+        res.render('treino', {
+            results: results
+        });
+        connection.end();
+        console.log('executou!');
+    });
+}
+
+app.get('/teste', function (req, res) {
+    execSQLQuery('select * from Person', connection, res);
+});
+
 app.post('/treinos/id', function (req, res) {
     res.send('treino {id} Cadastrado!');
 });
@@ -77,6 +108,6 @@ app.put('/exercicios/id', function (req, res) {
     res.send('exercicio {id} alterado!');
 });
 
-app.listen(4200, function () {
-    console.log('Iniciando aplicação na porta 4200!');
+app.listen(5000, function () {
+    console.log('Iniciando aplicação na porta 5000!');
 });
