@@ -1,11 +1,12 @@
+
 *{
     margin:0;
     padding:0;
 }
 
 body{
-  background-color: rgb(247, 10, 10);
-  font-family: 'Arial';
+    background-color: rgb(247, 10, 10);
+    font-family: 'Arial';
 }
 
 
@@ -58,3 +59,6 @@ body{
 .rd_abas:checked ~ .conteudo{
     display: block;
 }
+    
+
+</style>

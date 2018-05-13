@@ -1,0 +1,203 @@
+<!DOCTYPE >
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Gym-Service</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-sm-5">
+                        <p></p>
+                    </div>
+                    <div id ="cabecalho" class="col-sm-6">
+                        <h2>Gym-Service</h2>
+                            <h4>Academia Boa Forma</h4>
+                    </div>
+                    <div class="col-sm-3">
+                        <p></p>
+                    </div>		
+                </div>
+    
+                <div class="row">
+                    <div class="col-sm-2">
+                        <p></p>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p></p>
+                            </div>
+                            <div class="col-sm-8">
+                                <fieldset>
+                                    <nav class="nav_tabs">
+                                            <ul>
+                                                <li>
+                                                    <input type="radio" name="t_abas" class="rd_abas" id="aba1" checked>
+                                                    <label for ="aba1">Segunda</label>
+                                                    <div class="conteudo">
+                                                        
+                                                        <h2>Treino</h2>
+                                                        <table>
+                                                            <tr>
+                                                                <td><b>ID</b></td>
+                                                                
+                                                                <td><b>Tipo do Treino</b></td>
+                                                            </tr>
+                                                            <%for(var i = 0; i<treino.length; i++) { %>
+                                                            <tr>
+                                                                    <td><%= treino[i].id%></td>
+                                                                    
+                                                                    <td><%= treino[i].nome%></td>
+                                                            </tr>
+                                                            <% } %>  
+                                                            
+                                                            <p></p>
+                                                        </table>                                                                                                        
+                                                    </div>
+                                                </li>
+                            
+                                                <li>
+                                                    <input type="radio" name="t_abas" class="rd_abas" id="aba2">
+                                                    <label for ="aba2">Terça</label>
+                                                    <div class="conteudo">
+                                                        
+                                                        conteudo2
+                                                    
+                                                    </div>
+                                                </li>
+                            
+                                                <li>
+                                                    <input type="radio" name="t_abas" class="rd_abas" id="aba3">
+                                                    <label for ="aba3">Quarta</label>
+                                                    <div class="conteudo">
+                                                        
+                                                        conteudo3
+                                                    
+                                                    </div>
+                                                </li>
+                            
+                                                <li>
+                                                    <input type="radio" name="t_abas" class="rd_abas" id="aba4">
+                                                    <label for ="aba4">Quinta</label>
+                                                    <div class="conteudo">
+                            
+                                                        conteudo4
+                            
+                                                    </div>
+                                                </li>
+                            
+                                                <li>
+                                                    <input type="radio" name="t_abas" class="rd_abas" id="aba5">
+                                                    <label for ="aba5">Sexta</label>
+                                                    <div class="conteudo">
+                            
+                                                        conteudo5
+                            
+                                                    </div>
+                                                </li>
+                            
+                                                <li>
+                                                    <input type="radio" name="t_abas" class="rd_abas" id="aba6">
+                                                    <label for ="aba6">Sábado</label>
+                                                    <div class="conteudo">
+                            
+                                                        conteudo6
+                            
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                </fieldset>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <p></p>
+                    </div>
+                </div>
+        </div>
+
+    </body>
+
+<!--AQUI TIVE QUE COLOCAR O CSS POIS O EJS NÃO RECONHECIA O CSS EXTERNO-->
+    <style>
+
+    *{
+        margin:0;
+        padding:0;
+    }
+
+    body{
+        background-color: cyan;
+        font-family: 'Arial';
+    }
+
+
+    .nav_tabs{
+        width: 600px;
+        height: 400px;
+        margin: 100px auto;
+        background-color: rgba(255, 255, 255, 0.699);
+        position: relative;
+    }
+
+    .nav_tabs ul{
+        list-style: none;
+    }
+
+    .nav_tabs ul li{
+        float: left;
+        
+    }
+
+    .nav_tabs label{
+        width: 100px;
+        padding: 25px;
+        background-color: rgb(0, 15, 46);
+        display: block;
+        color: #fff;
+        cursor: pointer;
+        text-align: center;
+        border-bottom: 5px solid rgb(14, 123, 224);
+
+    }
+
+    .rd_abas:checked ~ label{
+        background-color: rgb(14, 123, 224);
+    }
+
+    .rd_abas{
+        display: none;
+    }
+
+    .conteudo{
+        background-color:#fff;
+        display: none;
+        position: absolute;
+        height: 400px;
+        width: 600px;
+        left: 0;
+    }
+
+    .rd_abas:checked ~ .conteudo{
+        display: block;
+    }
+        
+    
+    </style>
+
+
+</html>
