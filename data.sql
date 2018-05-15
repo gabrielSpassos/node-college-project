@@ -1,3 +1,34 @@
+create database gym;
+
+create table treino(
+id int auto_increment,
+nome varchar(100),
+primary key(id)
+);
+
+create table exercicio(
+id int auto_increment,
+nome varchar(100),
+peso double,
+repeticoes int,
+series int,
+descanco varchar(10),
+primary key(id)
+);
+
+create table treino_exercicio(
+id int auto_increment,
+id_treino int not null, 
+id_exercicio int not null,
+primary key(id)
+);
+
+alter table treino_exercicio
+add foreign key (id_treino) references treino(id);
+
+alter table treino_exercicio
+add foreign key (id_exercicio) references exercicio(id);
+
 desc treino;
 insert into treino (nome) values ('Treino de Peito');
 insert into treino (nome) values ('Treino de Costas'), ('Treino de Perna');
