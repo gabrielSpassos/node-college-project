@@ -1,5 +1,7 @@
 create database gym;
 
+use gym;
+
 create table treino(
 id int auto_increment,
 nome varchar(100),
