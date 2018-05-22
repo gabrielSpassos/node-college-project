@@ -68,64 +68,14 @@ add foreign key (id_treino) references treino(id);
 alter table treino_exercicio
 add foreign key (id_exercicio) references exercicio(id);
 
-insert into dia(nome_dia)values("Segunda");
-insert into dia(nome_dia)values("Terça");
-insert into dia(nome_dia)values("Quarta");
-insert into dia(nome_dia)values("Quinta");
-insert into dia(nome_dia)values("Sexta");
-insert into dia(nome_dia)values("Sabádo");
-select *from dia;
 
 
-
-insert into tipo_modalidade(nome_modalidade, valor)values("Mensal", 129.90);
-insert into tipo_modalidade(nome_modalidade, valor)values("Semestral", 720.90);
-insert into tipo_modalidade(nome_modalidade, valor)values("Anual", 1199.90);
-select *from tipo_modalidade;
-
-
-insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade) values ("03726138021", "Eduardo Amroginski", 33660939, 84.32, 1.85, 1);
-insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade) values ("22222222222", "Gabriel Passos", 99998888, 82, 1.83, 3);
-insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade) values ("11111111111", "Lucas-Marley", 8181818181, 78.32, 1.80, 2);
-select *from usuario;
-
-
-
-desc treino;
-insert into treino (nome) values ('Treino de Peito');
-insert into treino (nome) values ('Treino de Costas'), ('Treino de Perna');
-select * from treino
-order by id;
 -- SELECT * FROM treino ORDER BY id DESC LIMIT 1;
 
 -- UPDATE treino SET nome='teste' WHERE id = 4;
 
 -- delete from treino where id = 5 or 6 or 7;
 
-desc exercicio;
-insert into exercicio (nome) value ('Supino Reto');
-insert into exercicio (nome) value ('Agachamento');
-insert into exercicio (nome) value ('Puxada Frontal');
-insert into exercicio (nome) value ('Remada');
-select * from exercicio;
-
-desc treino_exercicio;
-insert into treino_exercicio (id_treino, id_exercicio) values (1,1);
-insert into treino_exercicio (id_treino, id_exercicio) values (2,4);
-select * from treino_exercicio;
-
-insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanco)values("03726138021", 2, 2, 20, 12, 4, "30s" );
-
-select tue.id_usuario, d.nome_dia, t.nome, e.nome, tue.peso, tue.repeticoes, tue.series, tue.descanco from treino_usuario_exercicio tue
-join treino_exercicio te 
-on te.id = tue.id_treino_exercicio
-join dia d 
-on d.id_dia = tue.id_dia
-join treino t
-on t.id = te.id_treino
-join exercicio e 
-on e.id = te.id_exercicio
-where tue.id_usuario = "03726138021";
 
 
 /*select t.nome 'Treino' , e.nome 'Exercicio', tue.peso 'Peso', tue.repeticoes 'Repeticoes', tue.series 'Series', tue.descanco 'Descanco' 

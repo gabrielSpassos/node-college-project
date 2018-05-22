@@ -171,4 +171,6 @@ select * from treino_exercicio;
 
 /*Insert Treino Teste*/
 insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanco)values("03726138021", 2, 2, 20, 12, 4, "30s" );
+insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanco)values("03726138021", 2, 5, 10, 15, 3, "30s" );
+insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanco)values("03726138021", 3, 10, 60, 12, 4, "30s" );
 select *from treino_usuario_exercicio

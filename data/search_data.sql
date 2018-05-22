@@ -9,4 +9,4 @@ join treino t
 on t.id = te.id_treino
 join exercicio e 
 on e.id = te.id_exercicio
-where tue.id_usuario = "03726138021";
+where tue.id_usuario = "03726138021" and tue.id_dia = 3;

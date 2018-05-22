@@ -64,5 +64,26 @@ module.exports = function(application){
             }
         });
     });
+/********MEUUUUUUUU EDUARDO ****************************************** */
+    application.patch('/treino/:id_usuario', function(req, res) {
+        var connectionMysql = application.config.dbMysql();
+        var treinoDAO = application.app.models.treinoDAO;
+        const id_usuario = req.body.nome.substring(0,150);
+        if(req.params.id_usuario){
+            id_usuario = parseInt(req.params.id_usuario);
+        } 
+        treinoDAO.updateTreino(connectionMysql, id_usuario);
+        treinoDAO.getTreinoById(connectionMysql, id_usuario, function(err, result){
+            if(result.length > 0){
+                res.render('treino/test2', {
+                    treino_usuario : result,
+                });
+            }else{
+                res.render('error/error', {
+                    error: 'Não foi encontrado treino'
+                }); 
+            }
+        });
+    });
 
 };

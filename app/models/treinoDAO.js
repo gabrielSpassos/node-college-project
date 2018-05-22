@@ -20,6 +20,10 @@ module.exports = function(){
         return connectionMysql.query('SELECT * FROM treino ORDER BY id DESC LIMIT 1;', callback);
     }
 
+    this.getTreinoDia = function(connectionMysql, id_usuario, callback) {
+        return connectionMysql.query('SELECT tue.id_usuario, d.nome_dia, t.nome, e.nome, tue.peso, tue.repeticoes, tue.series, tue.descanco FROM treino_usuario_exercicio tue JOIN treino_exercicio te ON te.id = tue.id_treino_exercicio JOIN dia d ON d.id_dia = tue.id_dia JOIN treino t ON t.id = te.id_treino JOIN exercicio e ON e.id = te.id_exercicio WHERE tue.id_usuario = '.concat(id_usuario), callback);
+    }
+
     return this;
 }
 
