@@ -1,4 +1,4 @@
-
+use gym;
 /*Dias*/
 insert into dia(nome_dia)values("Segunda");
 insert into dia(nome_dia)values("Terça");
