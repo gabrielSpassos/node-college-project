@@ -6,9 +6,15 @@
 </head>
 <body>
     <h2>Teste GET , POST and PATCH by ID</h2>
-    <p><%= treino_usuario[0].id_usuario %></p>
-    <p><%= treino_usuario[0].nome_dia %></p>
-    <p><%= treino_usuario[0].nome %></p>
-    <p><%= treino_usuario[0].id_usuario %></p>
+    <%for(var i=0;i<treino_usuario.length; i++) { %>
+        <p><%= treino_usuario[i].id_usuario %></p>
+        <p><%= treino_usuario[i].nome_dia %></p>
+        <p><%= treino_usuario[i].nomeTreino %></p>
+        <p><%= treino_usuario[i].nomeExercicio %></p>
+        <p><%= treino_usuario[i].peso %></p>
+        <p><%= treino_usuario[i].repeticoes %></p>
+        <p><%= treino_usuario[i].series %></p>
+        <p><%= treino_usuario[i].descanso %></p>
+    <% } %>
 </body>
 </html>

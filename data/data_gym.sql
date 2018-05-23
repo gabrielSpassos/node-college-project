@@ -3,13 +3,13 @@ create database gym;
 use gym;
 create table treino(
 id int auto_increment,
-nome varchar(100),
+nomeTreino varchar(100),
 primary key(id)
 );
 
 create table exercicio(
 id int auto_increment,
-nome varchar(100) unique,
+nomeExercicio varchar(100) unique,
 primary key(id)
 );
 
@@ -26,7 +26,8 @@ create table usuario(
     telefone numeric(11) not null, 
     peso float(4),
     altura float(3),
-    modalidade int not null
+    modalidade int not null,
+    senha text(15) not null
     
 );
 
@@ -49,7 +50,7 @@ create table treino_usuario_exercicio(
     peso double,
 	repeticoes int,
 	series int,
-	descanco varchar(10)
+	descanso varchar(10)
 );
 
 alter table treino_usuario_exercicio

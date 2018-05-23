@@ -15,20 +15,20 @@ insert into tipo_modalidade(nome_modalidade, valor)values("Anual", 1199.90);
 select *from tipo_modalidade;
 
 /*Usurios*/
-insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade) values ("03726138021", "Eduardo Amroginski", 33660939, 84.32, 1.85, 1);
-insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade) values ("22222222222", "Gabriel Passos", 99998888, 82, 1.83, 3);
-insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade) values ("11111111111", "Lucas-Marley", 8181818181, 78.32, 1.80, 2);
+insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade, senha) values ("03726138021", "Eduardo Amroginski", 33660939, 84.32, 1.85, 1, "12345");
+insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade, senha) values ("22222222222", "Gabriel Passos", 99998888, 82, 1.83, 3, "12345");
+insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade, senha) values ("11111111111", "Lucas-Marley", 8181818181, 78.32, 1.80, 2, "12345");
 select *from usuario;
 
 /*Treinos*/
 desc treino;
-insert into treino (nome) values ('Treino de Peito');
-insert into treino (nome) values ('Treino de Perna');
-insert into treino (nome) values ('Treino de Costas');
-insert into treino (nome) values ('Treino de Bíceps');
-insert into treino (nome) values ('Treino de Ombros');
-insert into treino (nome) values ('Treino de Tríceps');
-insert into treino (nome) values ('Treino de Abdomen/Faravertebrais');
+insert into treino (nomeTreino) values ('Treino de Peito');
+insert into treino (nomeTreino) values ('Treino de Perna');
+insert into treino (nomeTreino) values ('Treino de Costas');
+insert into treino (nomeTreino) values ('Treino de Bíceps');
+insert into treino (nomeTreino) values ('Treino de Ombros');
+insert into treino (nomeTreino) values ('Treino de Tríceps');
+insert into treino (nomeTreino) values ('Treino de Abdomen/Faravertebrais');
 select * from treino
 order by id;
 
@@ -36,70 +36,70 @@ order by id;
 /*******************************EXERCICIOS****************************************/
 desc exercicio;
 /*Peito*/
-insert into exercicio (nome) value ('Supino Reto');
-insert into exercicio (nome) value ('Supino Inclinado');
-insert into exercicio (nome) value ('Supino Declinado');
-insert into exercicio (nome) value ('Crucifixo Reto');
-insert into exercicio (nome) value ('Crucifixo Inclinado');
-insert into exercicio (nome) value ('Voador');
-insert into exercicio (nome) value ('Suplino Inclinado Halter');
-insert into exercicio (nome) value ('Supino Reto c/ Halter');
-insert into exercicio (nome) value ('Cross Over');
+insert into exercicio (nomeExercicio) value ('Supino Reto');
+insert into exercicio (nomeExercicio) value ('Supino Inclinado');
+insert into exercicio (nomeExercicio) value ('Supino Declinado');
+insert into exercicio (nomeExercicio) value ('Crucifixo Reto');
+insert into exercicio (nomeExercicio) value ('Crucifixo Inclinado');
+insert into exercicio (nomeExercicio) value ('Voador');
+insert into exercicio (nomeExercicio) value ('Suplino Inclinado Halter');
+insert into exercicio (nomeExercicio) value ('Supino Reto c/ Halter');
+insert into exercicio (nomeExercicio) value ('Cross Over');
 
 /*Pernas*/
-insert into exercicio (nome) value ('Adutor');
-insert into exercicio (nome) value ('Glúteos 4 Apoios');
-insert into exercicio (nome) value ('Panturrilha Sentada');
-insert into exercicio (nome) value ('Panturrilha em Pé');
-insert into exercicio (nome) value ('Agachamento');
-insert into exercicio (nome) value ('Hack Machine');
-insert into exercicio (nome) value ('Leg Press');
-insert into exercicio (nome) value ('Extensor');
-insert into exercicio (nome) value ('Afundo/Avanço');
-insert into exercicio (nome) value ('Flexora Deitado');
-insert into exercicio (nome) value ('Flexor em Pé');
-insert into exercicio (nome) value ('Abdutor');
+insert into exercicio (nomeExercicio) value ('Adutor');
+insert into exercicio (nomeExercicio) value ('Glúteos 4 Apoios');
+insert into exercicio (nomeExercicio) value ('Panturrilha Sentada');
+insert into exercicio (nomeExercicio) value ('Panturrilha em Pé');
+insert into exercicio (nomeExercicio) value ('Agachamento');
+insert into exercicio (nomeExercicio) value ('Hack Machine');
+insert into exercicio (nomeExercicio) value ('Leg Press');
+insert into exercicio (nomeExercicio) value ('Extensor');
+insert into exercicio (nomeExercicio) value ('Afundo/Avanço');
+insert into exercicio (nomeExercicio) value ('Flexora Deitado');
+insert into exercicio (nomeExercicio) value ('Flexor em Pé');
+insert into exercicio (nomeExercicio) value ('Abdutor');
 
 
 /*COSTAS*/
-insert into exercicio (nome) value ('Barra Fixa');
-insert into exercicio (nome) value ('Serrote');
-insert into exercicio (nome) value ('Remada Curvada');
-insert into exercicio (nome) value ('Voador Inverso');
-insert into exercicio (nome) value ('Crucifixo Inverso');
-insert into exercicio (nome) value ('Remada Articulada');
-insert into exercicio (nome) value ('Puxada Frente');
-insert into exercicio (nome) value ('Remada Baixa');
+insert into exercicio (nomeExercicio) value ('Barra Fixa');
+insert into exercicio (nomeExercicio) value ('Serrote');
+insert into exercicio (nomeExercicio) value ('Remada Curvada');
+insert into exercicio (nomeExercicio) value ('Voador Inverso');
+insert into exercicio (nomeExercicio) value ('Crucifixo Inverso');
+insert into exercicio (nomeExercicio) value ('Remada Articulada');
+insert into exercicio (nomeExercicio) value ('Puxada Frente');
+insert into exercicio (nomeExercicio) value ('Remada Baixa');
 
 /*Biceps*/
-insert into exercicio (nome) value ('Rosca Direita');
-insert into exercicio (nome) value ('Rosca no Scott');
-insert into exercicio (nome) value ('Rosca Aternada');
-insert into exercicio (nome) value ('Rosca Concentrada');
+insert into exercicio (nomeExercicio) value ('Rosca Direita');
+insert into exercicio (nomeExercicio) value ('Rosca no Scott');
+insert into exercicio (nomeExercicio) value ('Rosca Aternada');
+insert into exercicio (nomeExercicio) value ('Rosca Concentrada');
 
 
 /*Ombros*/
-insert into exercicio (nome) value ('Desenvolvimento de Ombros');
-insert into exercicio (nome) value ('Elevação Lateral');
-insert into exercicio (nome) value ('Elevação Frontal');
-insert into exercicio (nome) value ('Manguito Rotador');
-insert into exercicio (nome) value ('Remada Alta');
-insert into exercicio (nome) value ('Encolhimento de Ombros');
+insert into exercicio (nomeExercicio) value ('Desenvolvimento de Ombros');
+insert into exercicio (nomeExercicio) value ('Elevação Lateral');
+insert into exercicio (nomeExercicio) value ('Elevação Frontal');
+insert into exercicio (nomeExercicio) value ('Manguito Rotador');
+insert into exercicio (nomeExercicio) value ('Remada Alta');
+insert into exercicio (nomeExercicio) value ('Encolhimento de Ombros');
 
 /*Triceps*/
-insert into exercicio (nome) value ('Testa');
-insert into exercicio (nome) value ('Francês');
-insert into exercicio (nome) value ('Polia c/ Barra');
-insert into exercicio (nome) value ('Coice');
-insert into exercicio (nome) value ('Paralela');
+insert into exercicio (nomeExercicio) value ('Testa');
+insert into exercicio (nomeExercicio) value ('Francês');
+insert into exercicio (nomeExercicio) value ('Polia c/ Barra');
+insert into exercicio (nomeExercicio) value ('Coice');
+insert into exercicio (nomeExercicio) value ('Paralela');
 
 /*Abdomen/Faravertebrais*/
-insert into exercicio (nome) value ('Infras');
-insert into exercicio (nome) value ('Obliquos');
-insert into exercicio (nome) value ('Prancha');
-insert into exercicio (nome) value ('Prancha Lateral');
-insert into exercicio (nome) value ('Extensão de Tronco');
-insert into exercicio (nome) value ('Abdominal Cruzado');
+insert into exercicio (nomeExercicio) value ('Infras');
+insert into exercicio (nomeExercicio) value ('Obliquos');
+insert into exercicio (nomeExercicio) value ('Prancha');
+insert into exercicio (nomeExercicio) value ('Prancha Lateral');
+insert into exercicio (nomeExercicio) value ('Extensão de Tronco');
+insert into exercicio (nomeExercicio) value ('Abdominal Cruzado');
 select * from exercicio;
 
 /*****************************************Treino_exercicio******************************/
@@ -170,7 +170,7 @@ insert into treino_exercicio (id_treino, id_exercicio) values (7,50);
 select * from treino_exercicio;
 
 /*Insert Treino Teste*/
-insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanco)values("03726138021", 2, 2, 20, 12, 4, "30s" );
-insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanco)values("03726138021", 2, 5, 10, 15, 3, "30s" );
-insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanco)values("03726138021", 3, 10, 60, 12, 4, "30s" );
+insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanso)values("03726138021", 2, 2, 20, 12, 4, "30s" );
+insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanso)values("03726138021", 2, 5, 10, 15, 3, "30s" );
+insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanso)values("03726138021", 3, 10, 60, 12, 4, "30s" );
 select *from treino_usuario_exercicio

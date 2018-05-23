@@ -43,7 +43,7 @@ module.exports = function(application){
         
     });
 
-    application.patch('/treino/:id', function(req, res) {
+    application.get('/treino/:id', function(req, res) {
         var connectionMysql = application.config.dbMysql();
         var treinoDAO = application.app.models.treinoDAO;
         const nome = req.body.nome.substring(0,150);
@@ -51,8 +51,7 @@ module.exports = function(application){
         if(req.params.id){
             id = parseInt(req.params.id);
         } 
-        treinoDAO.updateTreino(connectionMysql, id, nome);
-        treinoDAO.getTreinoById(connectionMysql, id, function(err, result){
+        treinoDAO.getTreinoDia(connectionMysql, id, function(err, result){
             if(result.length > 0){
                 res.render('treino/test', {
                     treino : result,
@@ -64,16 +63,16 @@ module.exports = function(application){
             }
         });
     });
+
 /********MEUUUUUUUU EDUARDO ****************************************** */
-    application.patch('/treino/:id_usuario', function(req, res) {
+    application.get('/treinodia/:id_usuario', function(req, res){
         var connectionMysql = application.config.dbMysql();
         var treinoDAO = application.app.models.treinoDAO;
-        const id_usuario = req.body.nome.substring(0,150);
+        let id_usuario = '';
         if(req.params.id_usuario){
             id_usuario = parseInt(req.params.id_usuario);
-        } 
-        treinoDAO.updateTreino(connectionMysql, id_usuario);
-        treinoDAO.getTreinoById(connectionMysql, id_usuario, function(err, result){
+        }
+        treinoDAO.getTreinoDia(connectionMysql, id_usuario, function(err, result){
             if(result.length > 0){
                 res.render('treino/test2', {
                     treino_usuario : result,
