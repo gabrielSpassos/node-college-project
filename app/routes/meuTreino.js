@@ -1,6 +1,6 @@
 module.exports = function(application){
 
-    application.get('/treino', function(req, res){
+    application.get('/treinos', function(req, res){
         var connectionMysql = application.config.dbMysql();
         var treinoDAO = application.app.models.treinoDAO;
 
@@ -10,7 +10,7 @@ module.exports = function(application){
 
     });
 
-    application.get('/treino/:id', function(req, res){
+    application.get('/treinos/:id', function(req, res){
         var connectionMysql = application.config.dbMysql();
         var treinoDAO = application.app.models.treinoDAO;
         let id = '';
@@ -30,7 +30,7 @@ module.exports = function(application){
         });
     });
 
-    application.post('/treino', function(req, res) {
+    application.post('/treinos', function(req, res) {
         var connectionMysql = application.config.dbMysql();
         var treinoDAO = application.app.models.treinoDAO; 
         const nomeTreino = req.body.nomeTreino.substring(0,150);
@@ -49,7 +49,7 @@ module.exports = function(application){
         
     });
 
-    application.put('/treino/:id', function(req, res) {
+    application.put('/treinos/:id', function(req, res) {
         var connectionMysql = application.config.dbMysql();
         var treinoDAO = application.app.models.treinoDAO;
         const nomeTreino = req.body.nomeTreino.substring(0,150);
