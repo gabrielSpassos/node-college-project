@@ -23,21 +23,21 @@ _College project_
 **Usuários** 
 _Htpp methods: [GET]; [POST]; [PUT]_
 >
-http://http://localhost:3300/usuarios
+http://http://localhost:4200/usuarios
 >
-http://localhost:3300/usuarios/id
+http://localhost:4200/usuarios/id
 
 **Treinos**
 _Htpp methods: [GET]; [POST]; [PUT]_
 >
-http://localhost:3300/treinos
+http://localhost:4200/treinos
 >
-http://localhost:3300/treinos/id
+http://localhost:4200/treinos/id
 
 **Exercicios**
 _Htpp methods: [PUT]_
 >
-http://localhost:3300/exercicios/id
+http://localhost:4200/exercicios/id
 
 ### Initial Models 
 
