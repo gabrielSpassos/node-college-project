@@ -9,11 +9,11 @@ module.exports = function(){
     }
 
     this.saveTreino = function(connectionMysql, nome, callback){
-        return connectionMysql.query(`insert into treino (nome) value ('${nome}'); `, callback);
+        return connectionMysql.query(`insert into treino (nomeTreino) value ('${nome}'); `, callback);
     }
     
     this.updateTreino = function(connectionMysql, id, nome, callback){
-        return connectionMysql.query(`UPDATE treino SET nome='${nome}' WHERE id = '${id}';`, callback);
+        return connectionMysql.query(`UPDATE treino SET nomeTreino='${nome}' WHERE id = '${id}';`, callback);
     }
 
     this.getLastTreinoSaved = function(connectionMysql, callback) {

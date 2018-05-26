@@ -13,4 +13,4 @@ Join usuario u
 on u.cpf_usuario = tue.id_usuario
 where tue.id_usuario = "03726138021" and tue.id_dia = 2;
 
-select*From treino_usuario_exercicio
+select* from treino_usuario_exercicio
