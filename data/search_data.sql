@@ -19,7 +19,7 @@ select* from treino_usuario_exercicio
 
 SELECT u.cpf_usuario, u.nomecompleto, u.telefone, u.peso, u.altura, tm.nome_modalidade, tm.valor 
 FROM usuario u JOIN tipo_modalidade tm ON tm.id_modalidade = u.modalidade
-WHERE u.cpf_usuario = "03726138021";
+WHERE u.cpf_usuario = "01010101010";
 
 /**************UPDATES **************/
 UPDATE usuario SET senha = "465789" WHERE cpf_usuario = "01010101010";
