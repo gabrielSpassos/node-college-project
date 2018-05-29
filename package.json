@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/gabrielSpassos/gym-service#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.18.3",
     "consign": "^0.1.6",
     "ejs": "^2.6.1",
     "express": "^4.16.3",

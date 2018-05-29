@@ -15,7 +15,7 @@ insert into tipo_modalidade(nome_modalidade, valor)values("Anual", 1199.90);
 select *from tipo_modalidade;
 
 /*Usurios*/
-insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade, senha) values ("03726138021", "Eduardo Amroginski", 33660939, 84.32, 1.85, 1, "12345");
+insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade, senha) values ("01010101010", "Eduardo Amroginski", 33660939, 84.32, 1.85, 1, "12345");
 insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade, senha) values ("22222222222", "Gabriel Passos", 99998888, 82, 1.83, 3, "12345");
 insert into usuario (cpf_usuario, nomecompleto, telefone, peso, altura, modalidade, senha) values ("11111111111", "Lucas-Marley", 8181818181, 78.32, 1.80, 2, "12345");
 select *from usuario;
@@ -170,7 +170,7 @@ insert into treino_exercicio (id_treino, id_exercicio) values (7,50);
 select * from treino_exercicio;
 
 /*Insert Treino Teste*/
-insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanso)values("03726138021", 2, 2, 20, 12, 4, "30s" );
-insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanso)values("03726138021", 2, 5, 10, 15, 3, "30s" );
-insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanso)values("03726138021", 3, 10, 60, 12, 4, "30s" );
+insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanso)values("01010101010", 2, 2, 20, 12, 4, "30s" );
+insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanso)values("01010101010", 2, 5, 10, 15, 3, "30s" );
+insert into treino_usuario_exercicio (id_usuario, id_dia, id_treino_exercicio, peso, repeticoes, series, descanso)values("01010101010", 3, 10, 60, 12, 4, "30s" );
 select *from treino_usuario_exercicio
