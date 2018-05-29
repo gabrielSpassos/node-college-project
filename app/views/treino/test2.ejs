@@ -3,19 +3,44 @@
 <head>
     <title>Gym-Service</title>
     <meta charset="UTF-8">
+    <style type="text/css">
+        table,th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
-    <h2>Teste GET , POST and PATCH by ID</h2>
+    <h2>Tela de treinos do usuário</h2>
 
-    <p><%= treino_usuario[0].nomecompleto %></p>
-    <%for(var i=0;i<treino_usuario.length; i++) { %>
-        <p><%= treino_usuario[i].nome_dia %></p>
-        <p><%= treino_usuario[i].nomeTreino %></p>
-        <p><%= treino_usuario[i].nomeExercicio %></p>
-        <p><%= treino_usuario[i].peso %></p>
-        <p><%= treino_usuario[i].repeticoes %></p>
-        <p><%= treino_usuario[i].series %></p>
-        <p><%= treino_usuario[i].descanso %></p>
-    <% } %>
+    <p>User: <%= treino_usuario[0].nomecompleto %></p>
+    <table>
+        <caption>Treino</caption>
+        <tr>
+            <th colspan = "5"><%= treino_usuario[0].nomeTreino %></th>
+        </tr>
+
+        <tr>
+            <th colspan = "5"><%= treino_usuario[0].nome_dia %></th>
+        </tr>
+
+        <tr>
+            <th>Nome Exercício</th>
+            <th>Peso</th>
+            <th>Repetições</th>
+            <th>Séries</th>
+            <th>Descanso</th>
+        </tr>
+        <%for(var i=0;i<treino_usuario.length; i++) { %>
+        <tr>
+            <td><%= treino_usuario[i].nomeExercicio %></td>
+            <td><%= treino_usuario[i].peso %></td>
+            <td><%= treino_usuario[i].repeticoes %></td>
+            <td><%= treino_usuario[i].series %></td>
+            <td><%= treino_usuario[i].descanso %></td>
+        </tr>
+
+        <% } %>
+    </table>
 </body>
 </html>
