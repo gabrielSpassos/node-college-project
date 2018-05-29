@@ -59,6 +59,7 @@ module.exports = function(application){
         } 
         treinoDAO.updateTreino(connectionMysql, id, nomeTreino);
         treinoDAO.getLastTreinoSaved(connectionMysql, function(error, result){
+            console.log('Result', result);
             if(result.length > 0){
                 res.render('treino/test', {
                     treino : result,
@@ -71,24 +72,4 @@ module.exports = function(application){
         });
     });
 
-/********MEUUUUUUUU EDUARDO ****************************************** */
-    application.get('/treinodia/:id_usuario', function(req, res){
-        var connectionMysql = application.config.dbMysql();
-        var treinoDAO = application.app.models.treinoDAO;
-        let id_usuario = '';
-        if(req.params.id_usuario){
-            id_usuario = parseInt(req.params.id_usuario);
-        }
-        treinoDAO.getTreinoDia(connectionMysql, id_usuario, function(err, result){
-            if(result.length > 0){
-                res.render('treino/test2', {
-                    treino_usuario : result,
-                });
-            }else{
-                res.render('error/error', {
-                    error: 'Não foi encontrado treino'
-                });
-            }
-        });
-    });
 };
