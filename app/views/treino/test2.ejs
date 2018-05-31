@@ -14,25 +14,24 @@
     <h2>Tela de treinos do usuário</h2>
 
     <p>User: <%= treino_usuario[0].nomecompleto %></p>
+
+    <p>Treino de <%= treino_usuario[0].nome_dia %></p>
+
+    <%for(var i=0;i<treino_usuario.length; i++) { %>
     <table>
-        <caption>Treino</caption>
         <tr>
-            <th colspan = "6"><%= treino_usuario[0].nomeTreino %></th>
+            <th colspan = "6"><%= treino_usuario[i].nomeTreino %></th>
         </tr>
 
         <tr>
-            <th colspan = "6"><%= treino_usuario[0].nome_dia %></th>
-        </tr>
-
-        <tr>
-            <th>Id Exercício</th>
+            <th>Id Exercício do Usuário</th>
             <th>Nome Exercício</th>
             <th>Peso</th>
             <th>Repetições</th>
             <th>Séries</th>
             <th>Descanso</th>
         </tr>
-        <%for(var i=0;i<treino_usuario.length; i++) { %>
+
         <tr>
             <td><%= treino_usuario[i].id %></td>
             <td><%= treino_usuario[i].nomeExercicio %></td>
@@ -42,7 +41,9 @@
             <td><%= treino_usuario[i].descanso %></td>
         </tr>
 
-        <% } %>
+
     </table>
+    <br><br>
+    <% } %>
 </body>
 </html>
