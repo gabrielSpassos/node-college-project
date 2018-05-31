@@ -17,14 +17,15 @@
     <table>
         <caption>Treino</caption>
         <tr>
-            <th colspan = "5"><%= treino_usuario[0].nomeTreino %></th>
+            <th colspan = "6"><%= treino_usuario[0].nomeTreino %></th>
         </tr>
 
         <tr>
-            <th colspan = "5"><%= treino_usuario[0].nome_dia %></th>
+            <th colspan = "6"><%= treino_usuario[0].nome_dia %></th>
         </tr>
 
         <tr>
+            <th>Id Exercício</th>
             <th>Nome Exercício</th>
             <th>Peso</th>
             <th>Repetições</th>
@@ -33,6 +34,7 @@
         </tr>
         <%for(var i=0;i<treino_usuario.length; i++) { %>
         <tr>
+            <td><%= treino_usuario[i].id %></td>
             <td><%= treino_usuario[i].nomeExercicio %></td>
             <td><%= treino_usuario[i].peso %></td>
             <td><%= treino_usuario[i].repeticoes %></td>
