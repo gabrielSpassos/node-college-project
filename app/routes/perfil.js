@@ -20,4 +20,32 @@ module.exports = function(application){
         });
     });
 
+    application.put('/perfil/:id/:nomecompleto/:telefone/:peso/:altura/:modalidade/:senha/update', function (req, res) {
+        let connectionMysql = application.config.dbMysql();
+        let perfilDAO = application.app.models.perfilDAO;
+
+
+        const idUsuario = req.params.id;
+        const nomecompleto = req.body.nomecompleto;
+        const telefone = req.body.telefone;
+        const peso = req.body.peso;
+        const altura = req.body.altura;
+        const modalidade = req.body.modalidade;
+        const senha = req.body.senha;
+
+        perfilDAO.updatedPerfil(connectionMysql, nomecompleto, telefone, peso, altura, modalidade, senha, idUsuario);
+        perfilDAO.getPerfilByID(connectionMysql, idUsuario, function (err, result) {
+                if(result.length > 0){
+                    res.render('perfil/testPerfil', {
+                        perfilVar : result,
+                    });
+                }else{
+                    res.render('error/error', {
+                        error: 'Não foi encontrado treino'
+                    });
+                }
+            });
+
+    });
+
 };
