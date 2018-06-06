@@ -18,9 +18,9 @@ consign().include('./app/routes').into(app);
 
 consign()
 .include('./app/routes')
-//.then('config/dbConnection.js')
 .then('config/dbMysql.js')
 .then('app/models')
+.then('app/controllers')
 .into(app);
 
 module.exports = app; //exporta o modulo
