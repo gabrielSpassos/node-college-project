@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Treinos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <style>
+        .btn{
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .col-lg-1{
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        angular.module("listaTreinos", []);
+        angular.module("listaTreinos").controller("listaTreinosCtrl", 
+        function($scope, $http){
+            $scope.app = "Lista de Treinos";
+            $scope.treinos = [];
+            var carregarTreinos = function() {
+                $http.get("/treinos/:5").then(function (response) {
+                     $scope.treino = response.data;
+                }).catch(function (response) {
+                    $scope.message = "aconteceu um erro: " + response;
+                });
+                    
+            };
+        
+            carregarTreinos();
+        });
+    </script>
+
+</head>
+<body ng-controller="listaTreinosCtrl">
+    <div class="jumbotron text-center" style="margin-bottom:0">
+            <h1>Gym Service</h1> 
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <nav class="navbar navbar-expand-sm bg-dark navbar-dark border">
+                        <a class="navbar-brand" href="#">Treinos</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary" href="treino">Segunda-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Terça-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Quarta-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                    <button type="button" class="btn btn-secondary">Quinta-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Sexta-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Sábado</button>
+                            </li>  
+                            </ul>
+                        </div>  
+                </nav>
+            </div>  
+            <div class="col-lg-1"></div>
+         </div>         
+    </div>
+    <div class="container">
+        <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <form class="form-control">
+                        <select class="form-control" ng-model="treino.">
+                        Treino:<option value="">Selecione seu treino</option>
+                        </select>
+                    </form>
+                <table class="table ">
+                    <tr>
+                        <th></th>
+                        <th>Nome do treino</th>
+                        <th>exercicios</th>
+                        <th>dia</th>
+                        <th>Data</th>
+                        <th>repetições</th>
+                        <th>series</th>
+                        <th>descanso</th>
+
+                    </tr>
+                    <tr  ng-repeat="treino in treinos">
+                        <td>{{treino.nomeTreino}}</td>
+                        <td>{{treino.exercicios}}</td> 
+                        <td>{{treino.dia}}</td>
+                        <td>{{treino.repeticoes}}</td>
+                        <td>{{treino.series}}</td>
+                        <td>{{treino.descanso}}</td>
+                    
+                    </tr>
+                </table>
+                
+                </div>
+                <div class="col-lg-1"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+<!--
+<div class="container-fluid">
+  <h1>Hello World!</h1>
+  <p>Resize the browser window to see the effect.</p>
+  <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
+  <div class="row">
+    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+    <div class="col-sm-3" style="background-color:lavenderblush;">.col-sm-3</div>
+    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+    <div class="col-sm-3" style="background-color:lavenderblush;">.col-sm-3</div>
+  </div>
+</div>
+<nav class="navbar-expand-md bg-dark navbar-dark">
+                        
+                        <a class="navbar-brand" href="#">Treinos</a>
+                        
+                       
+                        <ul class="navbar-nav navbar-expand-md ">
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Segunda-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Terça-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Quarta-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Quinta-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Sexta-Feira</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-secondary">Sábado</button>
+                            </li>
+                        </ul>
+                    </nav>
+-->
