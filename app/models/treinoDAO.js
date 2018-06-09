@@ -1,11 +1,13 @@
-module.exports = function(){
+module.exports = function(application){
+
+    const connectionMysql = application.config.dbMysql();
 
     this.getTreino = function(connectionMysql, callback){
         return connectionMysql.query('select * from treino', callback);
     };
 
-    this.getTreinoById = function(connectionMysql, id, callback){
-        return connectionMysql.query('select * from treino where id = '.concat(id), callback);
+    this.getTreinoById = function(connectionMysql, idTreino, callback){ //Não esquecer: aqui vai o ID DO TREINO de 1 a 7
+        return connectionMysql.query('select * from treino where id = '.concat(idTreino), callback);
     };
 
     this.saveTreino = function(connectionMysql, nome, callback){

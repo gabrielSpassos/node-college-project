@@ -1,4 +1,4 @@
-use gym
+use gym;
 /*Pesquisa que usaremos na pagina do treino (apenas visualização)*/
 select tue.id_usuario, d.nome_dia, t.nomeTreino, e.nomeExercicio, tue.peso, tue.repeticoes, tue.series, tue.descanso from treino_usuario_exercicio tue
 join treino_exercicio te 
@@ -13,7 +13,7 @@ Join usuario u
 on u.cpf_usuario = tue.id_usuario
 where tue.id_usuario = "01010101010" and tue.id_dia = 2;
 
-select* from treino_usuario_exercicio
+select* from treino_usuario_exercicio;
 
 
 

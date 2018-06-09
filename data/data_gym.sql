@@ -23,7 +23,7 @@ primary key(id)
 create table usuario(
 	cpf_usuario varchar(11) not null unique primary key,
     nomecompleto text(50) not null, 
-    telefone numeric(11) not null, 
+    telefone text(11) not null, 
     peso float(4),
     altura float(3),
     modalidade int not null,

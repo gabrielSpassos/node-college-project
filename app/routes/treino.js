@@ -18,7 +18,9 @@ module.exports = function(application){
             id = parseInt(req.params.id);
         }
         treinoDAO.getTreinoById(connectionMysql, id, function(err, result){
+            console.log(result.length);
             if(result.length > 0){
+                
                 res.render('treino/test', {
                     treino : result,
                 });
