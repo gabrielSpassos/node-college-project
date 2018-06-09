@@ -1,16 +1,15 @@
 module.exports = function(application){
 
-    application.get('/usuarios/:id/treinos', function(req, res){
-        let usuarioController = application.app.controllers.usuarioController;
-
+    application.get('/usuarios/:id', function(req, res){
+        var connectionMysql = application.config.dbMysql();
+        var usuarioDAO = application.app.models.treinoDAO;
         const idUsuario = req.params.id;
-        const idDia = req.query.idDia;
+        const idDia = 5;
 
-        usuarioController.getUsuarioTreinosByIdUsuariosAndIdDia(idUsuario, idDia, function(result){
-
+        usuarioDAO.getUsuarioTreinosByIdUsuariosAndIdDia(connectionMysql, idUsuario, idDia, function(result, err){
             console.log("Resultado")
             if(result.length > 0){
-                res.render('treino/test2', {
+                res.render('telasTest/usuarioConsultaTreino', {
                     treino_usuario : result,
                 });
             }else{
@@ -20,6 +19,9 @@ module.exports = function(application){
             }
         });
     });
+
+
+
 
     application.put('/usuarios/:id/exercicios', function (req, res) {
         
@@ -32,7 +34,7 @@ module.exports = function(application){
         const series = req.body.series;
         const descanso = req.body.descanso;
 
-        usuarioDAO.updateUsuarioExercicioByIdTreinoExercioUsuario(peso, repeticoes, series, descanso, idTreinoUsuarioExercicio);
+        usuarioDAO.updateUsuarioExercicioByIdTreinoExercioUsuario(idUsuario, peso, repeticoes, series, descanso, idTreinoUsuarioExercicio);
         usuarioDAO.getTreinoExercicioUsuarioByIdUsuarioAndIdTreinoExercioUsuario(idUsuario, idTreinoUsuarioExercicio, function (err, result) {
                 if(result.length > 0){
                     res.render('treino/test2', {

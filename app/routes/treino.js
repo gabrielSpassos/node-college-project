@@ -10,15 +10,14 @@ module.exports = function(application){
 
     });
 
-    application.get('/treinos/:id', function(req, res){
+    application.get('/treinos/:idTreino', function(req, res){
         var connectionMysql = application.config.dbMysql();
         var treinoDAO = application.app.models.treinoDAO;
-        let id = '';
-        if(req.params.id){
-            id = parseInt(req.params.id);
+        let idTreino = '';
+        if(req.params.idTreino){
+            idTreino = parseInt(req.params.idTreino);
         }
-        treinoDAO.getTreinoById(connectionMysql, id, function(err, result){
-            console.log(result.length);
+        treinoDAO.getTreinoById(connectionMysql, idTreino, function(err, result){
             if(result.length > 0){
                 
                 res.render('treino/test', {
@@ -35,7 +34,7 @@ module.exports = function(application){
     application.post('/treinos', function(req, res) {
         var connectionMysql = application.config.dbMysql();
         var treinoDAO = application.app.models.treinoDAO; 
-        const nomeTreino = req.body.nomeTreino.substring(0,150);
+        const nomeTreino = req.body.nomeTreino;
         treinoDAO.saveTreino(connectionMysql, nomeTreino);
         treinoDAO.getLastTreinoSaved(connectionMysql, function(error, result){
             if(result.length > 0){
@@ -51,21 +50,24 @@ module.exports = function(application){
         
     });
 
-    application.put('/treinos/:id', function(req, res) {
+    application.put('/treinos/:idTreino', function(req, res) {
         var connectionMysql = application.config.dbMysql();
         var treinoDAO = application.app.models.treinoDAO;
-        const nomeTreino = req.body.nomeTreino.substring(0,150);
-        let id = '';
-        if(req.params.id){
-            id = parseInt(req.params.id);
+        const nomeTreino = req.body.nomeTreino;
+        let idTreino = '';
+        console.log(idTreino)
+        if(req.params.idTreino){
+            console.log(idTreino)
+            idTreino = parseInt(req.params.idTreino);
         } 
-        treinoDAO.updateTreino(connectionMysql, id, nomeTreino);
-        treinoDAO.getLastTreinoSaved(connectionMysql, function(error, result){
+        treinoDAO.updateTreino(connectionMysql, idTreino, nomeTreino);
+        treinoDAO.getTreinoById(connectionMysql, idTreino, function(error, result){
             console.log('Result', result);
             if(result.length > 0){
-                res.render('treino/test', {
+                res.render('treino/test',{
                     treino : result,
                 });
+              //  console.log(idTreino)
             }else{
                 res.render('error/error', {
                     error: "Erro ao atualizar treino"

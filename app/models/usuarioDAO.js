@@ -8,8 +8,8 @@ module.exports = function(application){
 
     };
     
-    this.updateUsuarioExercicioByIdTreinoExercioUsuario = function (connectionMysql, peso, repeticoes, series, descanso, id, callback) {
-        return connectionMysql.query(`update treino_usuario_exercicio set peso = '${peso}', repeticoes = '${repeticoes}', series = '${series}', descanso = '${descanso}' where treino_usuario_exercicio.id = '${id}';`, callback);
+    this.updateUsuarioExercicioByIdTreinoExercioUsuario = function (connectionMysql, idUsuario, id, peso, repeticoes, series, descanso, callback) {
+        return connectionMysql.query(`UPDATE treino_usuario_exercicio set peso = '${peso}', repeticoes = '${repeticoes}', series = '${series}', descanso = '${descanso}' where treino_usuario_exercicio.id = '${id}' and 'treino_usuario_exercicio= '${idUsuario}';`, callback);
     };
 
     this.getTreinoExercicioUsuarioByIdUsuarioAndIdTreinoExercioUsuario = function (connectionMysql, idUsuario, idTreinoExercioUsuario, callback) {
