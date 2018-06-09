@@ -20,22 +20,19 @@ module.exports = function(application){
         });
     });
 
-    application.put('/perfil/update/:id', function (req, res) {
+    application.put('/perfil/:id', function (req, res) {
         let connectionMysql = application.config.dbMysql();
         let perfilDAO = application.app.models.perfilDAO;
-        
 
         const idUsuario = req.params.id;
         const nomecompleto = req.body.nomecompleto;
         const telefone = req.body.telefone;
-        const peso = '';
         if(req.body.peso){
-            var pesoUsuario = parseFloat(req.body.peso);
-        };
-        const altura= '';
+            const peso  = parseFloat(req.body.peso);
+        }
         if(req.body.altura){
-            var alturaUsuario = parseFloat(req.body.altura);
-        };
+            const altura = parseFloat(req.body.altura);
+        }
         const modalidade = req.body.modalidade;
         const senha = req.body.senha;
 
