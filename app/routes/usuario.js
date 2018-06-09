@@ -1,16 +1,18 @@
 module.exports = function(application){
 
     application.get('/usuarios/:id', function(req, res){
-        var connectionMysql = application.config.dbMysql();
-        var usuarioDAO = application.app.models.treinoDAO;
-        const idUsuario = req.params.id;
-        const idDia = 5;
+        const connectionMysql = application.config.dbMysql();
+        const usuarioDAO = application.app.models.usuarioDAO;
 
-        usuarioDAO.getUsuarioTreinosByIdUsuariosAndIdDia(connectionMysql, idUsuario, idDia, function(result, err){
-            console.log("Resultado")
+
+        const idUsuario = req.params.id;
+        const idDia = 2;
+        console.log(idUsuario, idDia);
+        usuarioDAO.getTUEpDia(connectionMysql, idUsuario, idDia, function(result, err){
+            console.log("Resultado", result);
             if(result.length > 0){
                 res.render('telasTest/usuarioConsultaTreino', {
-                    treino_usuario : result,
+                    tue : result,
                 });
             }else{
                 res.render('error/error', {
@@ -19,8 +21,6 @@ module.exports = function(application){
             }
         });
     });
-
-
 
 
     application.put('/usuarios/:id/exercicios', function (req, res) {
