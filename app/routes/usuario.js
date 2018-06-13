@@ -1,18 +1,16 @@
 module.exports = function(application){
 
-    application.get('/usuarios/:id', function(req, res){
-        const connectionMysql = application.config.dbMysql();
+    application.get('/usuarios/:id/exercicios', function(req, res){
+        
         const usuarioDAO = application.app.models.usuarioDAO;
 
-
         const idUsuario = req.params.id;
-        const idDia = 2;
-        console.log(idUsuario, idDia);
-        usuarioDAO.getTUEpDia(connectionMysql, idUsuario, idDia, function(result, err){
-            console.log("Resultado", result);
+        const idDia = req.query.idDia;
+
+        usuarioDAO.getTUEpDia(idUsuario, idDia, function(err, result){
             if(result.length > 0){
-                res.render('telasTest/usuarioConsultaTreino', {
-                    tue : result,
+                res.render('treino/test2', {
+                    treino_usuario : result,
                 });
             }else{
                 res.render('error/error', {
@@ -22,10 +20,9 @@ module.exports = function(application){
         });
     });
 
-
     application.put('/usuarios/:id/exercicios', function (req, res) {
         
-        let usuarioDAO = application.app.models.usuarioDAO;
+        const usuarioDAO = application.app.models.usuarioDAO;
 
         const idUsuario = req.params.id;
         const idTreinoUsuarioExercicio = req.body.idTreinoUsuarioExercicio;
@@ -36,16 +33,15 @@ module.exports = function(application){
 
         usuarioDAO.updateUsuarioExercicioByIdTreinoExercioUsuario(idUsuario, peso, repeticoes, series, descanso, idTreinoUsuarioExercicio);
         usuarioDAO.getTreinoExercicioUsuarioByIdUsuarioAndIdTreinoExercioUsuario(idUsuario, idTreinoUsuarioExercicio, function (err, result) {
-                if(result.length > 0){
-                    res.render('treino/test2', {
-                        treino_usuario : result,
-                    });
-                }else{
-                    res.render('error/error', {
-                        error: 'Não foi encontrado treino'
-                    });
-                }
-            })
-
+            if(result.length > 0){
+                res.render('treino/test2', {
+                    treino_usuario : result,
+                });
+            }else{
+                res.render('error/error', {
+                    error: 'Não foi encontrado treino'
+                });
+            }
+        })
     });
 };

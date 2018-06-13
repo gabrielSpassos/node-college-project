@@ -29,8 +29,8 @@ module.exports = function(application){
     application.post('/treinos', function(req, res) {
         const treinoDAO = application.app.models.treinoDAO;
         const nomeTreino = req.body.nomeTreino;
-        treinoDAO.saveTreino(connectionMysql, nomeTreino);
-        treinoDAO.getLastTreinoSaved(connectionMysql, function(error, result){
+        treinoDAO.saveTreino(nomeTreino);
+        treinoDAO.getLastTreinoSaved(function(error, result){
             if(result.length > 0){
                 res.render('treino/test', {
                     treino : result,
@@ -49,8 +49,8 @@ module.exports = function(application){
         const nomeTreino = req.body.nomeTreino;
         let idTreino = req.params.idTreino;
 
-        treinoDAO.updateTreino(connectionMysql, idTreino, nomeTreino);
-        treinoDAO.getTreinoById(connectionMysql, idTreino, function(error, result){
+        treinoDAO.updateTreino(idTreino, nomeTreino);
+        treinoDAO.getTreinoById(idTreino, function(error, result){
             if(result.length > 0){
                 res.render('treino/test',{
                     treino : result,
