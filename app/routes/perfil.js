@@ -23,15 +23,17 @@ module.exports = function(application){
     application.put('/perfil/:id', function (req, res) {
         let connectionMysql = application.config.dbMysql();
         let perfilDAO = application.app.models.perfilDAO;
+        let pesoUsuario="";
+        let alturaUsuario="";
 
         const idUsuario = req.params.id;
         const nomecompleto = req.body.nomecompleto;
         const telefone = req.body.telefone;
         if(req.body.peso){
-            const peso  = parseFloat(req.body.peso);
+            pesoUsuario  = parseFloat(req.body.peso);
         }
         if(req.body.altura){
-            const altura = parseFloat(req.body.altura);
+            alturaUsuario = parseFloat(req.body.altura);
         }
         const modalidade = req.body.modalidade;
         const senha = req.body.senha;
