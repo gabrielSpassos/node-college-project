@@ -62,4 +62,41 @@ module.exports = function(application){
             }
         });
     });
+
+
+
+    application.get('/consulta', function(req, res){
+        const treinoDAO = application.app.models.treinoDAO;
+
+        treinoDAO.getTreinoExercicio(function(err, result){
+            res.render('treino/consultTreinoExerc', {treinoExerc : result});
+        });
+
+    });
+
+
+    application.get('/consulta/:idTreino', function(req, res){
+        const treinoDAO = application.app.models.treinoDAO;
+        let idTreino = req.params.idTreino;
+
+        treinoDAO.getTreinoExercicioById(idTreino, function(err, result){
+            if(result.length > 0){
+                res.render('treino/consultTreinoExerc2', {
+                    treinoExerc : result,
+                });
+            }else{
+                res.render('error/error', {
+                    error: "Erro ao buscar treino"
+                });
+            }
+        });
+    });
+
+
+
+
+
+
+
+
 };
