@@ -44,4 +44,31 @@ module.exports = function(application){
             }
         })
     });
+
+    application.post('/usuarios/:id/exercicios', function (req, res) {
+        
+        const usuarioDAO = application.app.models.usuarioDAO;
+
+        const idUsuario = req.params.id;
+		const idDia = req.body.idDia;
+		const idTreinoExercicio = req.body.idTreinoExercicio;
+        const peso = req.body.peso;
+        const repeticoes = req.body.repeticoes;
+        const series = req.body.series;
+        const descanso = req.body.descanso;
+
+        usuarioDAO.saveTreinoExercicioUsuario(idUsuario, idDia, idTreinoExercicio, peso, repeticoes, series, descanso);
+		
+        usuarioDAO.getTUEpDia(idUsuario, idDia, function(err, result){
+            if(result.length > 0){
+                res.render('treino/test2', {
+                    treino_usuario : result,
+                });
+            }else{
+                res.render('error/error', {
+                    error: 'Não foi encontrado exercicios para esse usuário'
+                });
+            }
+        });
+    });
 };
