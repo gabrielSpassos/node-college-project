@@ -33,7 +33,7 @@ UPDATE treino_usuario_exercicio SET repeticoes = 12 WHERE id_usuario = "01010101
 UPDATE treino_usuario_exercicio SET series = 3 WHERE id_usuario = "01010101010" AND id = 2;
 UPDATE treino_usuario_exercicio SET descanso = 40 WHERE id_usuario = "01010101010" AND id = 2;
 
-
+select * from usuario;
 
 
 /*********DELETE DOS TREINOS*******/
