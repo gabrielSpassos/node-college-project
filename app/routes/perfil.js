@@ -1,13 +1,10 @@
 module.exports = function(application){
 
     application.get('/perfil/:idUsuario', function(req, res){
-        var connectionMysql = application.config.dbMysql();
-        var perfilDAO = application.app.models.perfilDAO;
-        var idUsuario = '';
-        if(req.params.idUsuario){
-            idUsuario = parseInt(req.params.idUsuario);
-        }
-        perfilDAO.getPerfilByID(connectionMysql, idUsuario, function(err, result){
+        const perfilDAO = application.app.models.perfilDAO;
+        const idUsuario = parseInt(req.params.idUsuario);
+       
+        perfilDAO.getPerfilByID(idUsuario, function(err, result){
             if(result.length > 0){
                 res.render('perfil/testPerfil', {
                     perfilVar : result,
@@ -21,7 +18,6 @@ module.exports = function(application){
     });
 
     application.put('/perfil/:id', function (req, res) {
-        let connectionMysql = application.config.dbMysql();
         let perfilDAO = application.app.models.perfilDAO;
       
         const idUsuario = req.params.id;
@@ -32,20 +28,19 @@ module.exports = function(application){
         const modalidade = req.body.modalidade;
         const senha = req.body.senha;
 
-        perfilDAO.updatedPerfil(connectionMysql, idUsuario, nomecompleto, telefone, pesoUsuario, alturaUsuario, modalidade, senha);
+        perfilDAO.updatedPerfil(idUsuario, nomecompleto, telefone, pesoUsuario, alturaUsuario, modalidade, senha);
         
-        perfilDAO.getPerfilByID(connectionMysql, idUsuario, function (err, result) {
-                if(result.length > 0){
-                    res.render('perfil/testPerfil', {
-                        perfilVar : result,
-                    });
-                }else{
-                    res.render('error/error', {
-                        error: 'Não foi encontrado treino'
-                    });
-                }
-            });
-
+        perfilDAO.getPerfilByID(idUsuario, function (err, result) {
+            if(result.length > 0){
+                res.render('perfil/testPerfil', {
+                    perfilVar : result,
+                });
+            }else{
+                res.render('error/error', {
+                    error: 'Não foi encontrado treino'
+                });
+            }
+        });
     });
 
 };
