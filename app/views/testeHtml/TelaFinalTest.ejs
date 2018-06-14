@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <style>
         .btn{
@@ -19,8 +20,22 @@
             margin-bottom: 10px;
         }
         .col-lg-1{
-            background-color: aqua;
+            
         }
+        .rd_abas:checked ~ .conteudo{
+            display: block;
+        }
+        .conteudo{
+        background-color:#fff;
+        display: none;
+        position: absolute;
+        height: 400px;
+        width: 600px;
+        left: 0;
+    }
+    .rd_abas{
+        display: none;
+    }
     </style>
     <script>
         angular.module("listaTreinos", []);
@@ -51,21 +66,39 @@
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-lg-10">
-                <nav class="navbar navbar-expand-sm bg-dark navbar-dark border">
+                    
+                 <nav class="navbar navbar-expand-sm bg-dark navbar-dark border">
                         <a class="navbar-brand" href="#">Treinos</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="collapsibleNavbar">
                             <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a>Segunda-Feira</a>
+                                    <div class="conteudo">
+                                                            
+                                        <h2>Treino</h2>
+                                        <table>
+                                            <tr>
+                                                <td><b>ID</b></td>
+                                                
+                                                <td><b>Tipo do Treino</b></td>
+                                            </tr>
+                                            <tr>
+                                                    <td><%= treino[0].id%></td>
+                                                    
+                                                    <td><%= treino[0].nomeTreino%></td>
+                                            </tr>
+                                            <p></p>
+                                        </table>                                                                                                        
+                                    </div>
+                                </li>
                             <li class="nav-item">
-                                <button type="button" class="btn btn-secondary" href="treino">Segunda-Feira</button>
+                                <a>Terça-Feira</a>
                             </li>
                             <li class="nav-item">
-                                <button type="button" class="btn btn-secondary">Terça-Feira</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-secondary">Quarta-Feira</button>
+                                <a>Quarta-Feira</a>
                             </li>
                             <li class="nav-item">
                                     <button type="button" class="btn btn-secondary">Quinta-Feira</button>
@@ -78,7 +111,7 @@
                             </li>  
                             </ul>
                         </div>  
-                </nav>
+                </nav> 
             </div>  
             <div class="col-lg-1"></div>
          </div>         
@@ -87,33 +120,29 @@
         <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-10">
-                    <form class="form-control">
-                        <select class="form-control" ng-model="treino.">
-                        Treino:<option value="">Selecione seu treino</option>
-                        </select>
-                    </form>
-                <table class="table ">
-                    <tr>
-                        <th></th>
-                        <th>Nome do treino</th>
-                        <th>exercicios</th>
-                        <th>dia</th>
-                        <th>Data</th>
-                        <th>repetições</th>
-                        <th>series</th>
-                        <th>descanso</th>
+                    <table class="form-control">
+                        <tr>
+                            <th>Nome do treino</th>
+                            <th>Exercicios</th>
+                            <th>Dia</th>
+                            <th>Data</th>
+                            <th>Repetições</th>
+                            <th>Series</th>
+                            <th>Descanso</th>
 
-                    </tr>
-                    <tr  ng-repeat="treino in treinos">
-                        <td>{{treino.nomeTreino}}</td>
-                        <td>{{treino.exercicios}}</td> 
-                        <td>{{treino.dia}}</td>
-                        <td>{{treino.repeticoes}}</td>
-                        <td>{{treino.series}}</td>
-                        <td>{{treino.descanso}}</td>
-                    
-                    </tr>
-                </table>
+                        </tr>
+                        <tr  ng-repeat="treino in treinos">
+                                <td><%= treino[0].id%></td>
+                                                                    
+                                <td><%= treino[0].nomeTreino%></td>
+                            <td>{{treino.exercicios}}</td> 
+                            <td>{{treino.dia}}</td>
+                            <td>{{treino.repeticoes}}</td>
+                            <td>{{treino.series}}</td>
+                            <td>{{treino.descanso}}</td>
+                        
+                        </tr>
+                    </table>
                 
                 </div>
                 <div class="col-lg-1"></div>
