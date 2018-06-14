@@ -26,7 +26,7 @@ _College project_
 ```
 
 >
-localhost:4200/usuarios/01010101010/exercicios?idDia=2
+http://localhost:4200/usuarios/01010101010/exercicios?idDia=2
 <hr>
 
 ```
