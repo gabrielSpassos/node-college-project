@@ -32,9 +32,8 @@ localhost:4200/usuarios/01010101010/exercicios?idDia=2
 ```
 [Put] /usuarios/id/exercicios
 ```
-
 >
-localhost:4200/usuarios/01010101010/exercicios
+http://localhost:4200/usuarios/01010101010/exercicios
 
 _Body_
 ```javascript
@@ -53,7 +52,7 @@ _Body_
 ```
 
 >
-localhost:4200/usuarios/01010101010/exercicios
+http://localhost:4200/usuarios/01010101010/exercicios
 
 _Body_
 ```javascript
@@ -74,7 +73,7 @@ _Body_
 ```
 
 >
-localhost:4200/perfil/01010101010
+http://localhost:4200/perfil/01010101010
 
 <hr>
 
@@ -83,7 +82,7 @@ localhost:4200/perfil/01010101010
 ```
 
 >
-localhost:4200/perfil/01010101010
+http://localhost:4200/perfil/01010101010
 
 _Body_
 ```javascript
@@ -104,7 +103,7 @@ _Body_
 ```
 
 >
-localhost:4200/consulta
+http://localhost:4200/consulta
 
 <hr>
 
@@ -113,4 +112,4 @@ localhost:4200/consulta
 ```
 
 >
-localhost:4200/consulta/5
+http://localhost:4200/consulta/5
