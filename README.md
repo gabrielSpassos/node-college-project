@@ -20,125 +20,97 @@ _College project_
 * User can create their own trainings
 
 ### Endpoints 
-**Usuários** 
-_Htpp methods: [GET]; [POST]; [PUT]_
->
-http://http://localhost:4200/usuarios
->
-http://localhost:4200/usuarios/id
 
-**Treinos**
-_Htpp methods: [GET]; [POST]; [PUT]_
->
-http://localhost:4200/treinos
->
-http://localhost:4200/treinos/id
+```
+[Get] /usuarios/id/exercicios?idDia
+```
 
-**Exercicios**
-_Htpp methods: [PUT]_
 >
-http://localhost:4200/exercicios/id
+localhost:4200/usuarios/01010101010/exercicios?idDia=2
+<hr>
 
-### Initial Models 
+```
+[Put] /usuarios/id/exercicios
+```
 
-_User Model_
+>
+localhost:4200/usuarios/01010101010/exercicios
+
+_Body_
 ```javascript
 {
-  "nome": "Gabriel",
-  "peso": 85,
-  "altura": 1.83,
-  "imc": 24.78,
-  "matricula" : "123456789",
-  "plano":{
-    "modalidade": "semestral",
-    "mensalidade": 110.90
-  },
-  "treinos":[
-    {
-      "nomeTreino":"Treino de Peitoral",
-      "exercicios":[
-        {
-          "nomeExercicio":"supino reto",
-          "peso": 25,
-          "repeticoes": 12,
-          "series" : 3,
-          "descanco" : "60s"
-        },
-        {
-          "nomeExercicio":"voador",
-          "peso": 50,
-          "repeticoes": 10,
-          "series" : 4,
-          "descanco" : "30s"
-        }
-      ]
-    },
-    {
-      "nomeTreino":"Treino de Costas",
-      "exercicios":[
-        {
-          "nomeExercicio":"Barra Supinada",
-          "peso": 0,
-          "repeticoes": 12,
-          "series" : 3,
-          "descanco" : "90s"
-        },
-        {
-          "nomeExercicio":"remada",
-          "peso": 50,
-          "repeticoes": 10,
-          "series" : 4,
-          "descanco" : "45s"
-        }
-      ]
-    }
-  ]
+    "idTreinoUsuarioExercicio": "2",
+    "peso":"1000",
+    "repeticoes":"60",
+    "series":"8",
+    "descanso":"2000s"
+}
+```
+<hr>
+
+```
+[Post] /usuarios/id/exercicios
+```
+
+>
+localhost:4200/usuarios/01010101010/exercicios
+
+_Body_
+```javascript
+{
+    "idDia": "5",
+    "idTreinoExercicio": "30",
+    "peso":"30",
+    "repeticoes":"10",
+    "series":"8",
+    "descanso":"60s"
 }
 ```
 
-_Treinos Model_
+<hr>
 
+```
+[Get] /perfil/id
+```
+
+>
+localhost:4200/perfil/01010101010
+
+<hr>
+
+```
+[Put] /perfil/id
+```
+
+>
+localhost:4200/perfil/01010101010
+
+_Body_
 ```javascript
 {
-  "treinos":[
-    {
-      "nomeTreino":"Treino de Peitoral",
-      "exercicios":[
-        {
-          "nomeExercicio":"supino reto",
-          "peso": 25,
-          "repeticoes": 12,
-          "series" : 3,
-          "descanco" : "60s"
-        },
-        {
-          "nomeExercicio":"voador",
-          "peso": 50,
-          "repeticoes": 10,
-          "series" : 4,
-          "descanco" : "30s"
-        }
-      ]
-    },
-    {
-      "nomeTreino":"Treino de Costas",
-      "exercicios":[
-        {
-          "nomeExercicio":"Barra Supinada",
-          "peso": 0,
-          "repeticoes": 12,
-          "series" : 3,
-          "descanco" : "90s"
-        },
-        {
-          "nomeExercicio":"remada",
-          "peso": 50,
-          "repeticoes": 10,
-          "series" : 4,
-          "descanco" : "45s"
-        }
-      ]
-    }
-  ]
+    "nomecompleto": "Eduardo Da SilvaSauro",
+    "telefone":"6666-0000",
+    "peso":86.0,
+    "altura":1.87,
+    "modalidade":"2",
+    "senha":"252525"
 }
 ```
+
+<hr>
+
+```
+[Get] /consulta
+```
+
+>
+localhost:4200/consulta
+
+<hr>
+
+```
+[Get] /consulta/id
+```
+
+>
+localhost:4200/consulta/5

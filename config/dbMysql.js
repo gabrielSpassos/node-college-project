@@ -6,7 +6,7 @@ var ConnectMySql = function(){
         host: 'localhost',
         port:'3306',
         user: 'root',
-        password: '12345',
+        password: '',
         database: 'gym'
     });
 
@@ -15,4 +15,4 @@ var ConnectMySql = function(){
 module.exports = function(){
     console.log("O autoload carregou o modulo BD");
     return ConnectMySql;
-}
+};
