@@ -6,7 +6,7 @@ var ConnectMySql = function(){
         host: '52.2.220.2',
         port:'3636',
         user: 'root',
-        password: '',
+        password: '12345',
         database: 'gym'
     });
 
