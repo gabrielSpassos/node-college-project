@@ -99,17 +99,78 @@ _Body_
 <hr>
 
 ```
-[Get] /consulta
+[Get] /exercicos
 ```
 
 >
-http://localhost:4200/consulta
+http://localhost:4200/exercicios
 
 <hr>
 
 ```
-[Get] /consulta/id
+[Get] /exercicios/id
 ```
 
 >
-http://localhost:4200/consulta/5
+http://localhost:4200/exercicios/5
+
+<hr>
+
+```
+[Get] /treinos
+```
+
+>
+http://localhost:4200/treinos
+
+<hr>
+
+```
+[Get] /treinos/idTreino
+```
+
+>
+http://localhost:4200/treinos/2
+
+<hr>
+
+```
+[Post] /treinos
+```
+
+>
+http://localhost:4200/treinos
+
+_Body_
+```javascript
+{
+    "nomeTreino": "TreinoTest"
+}
+```
+
+<hr>
+
+```
+[Put] /treinos/idTreino
+```
+
+>
+http://localhost:4200/treinos/8
+
+_Body_
+```javascript
+{
+    "nomeTreino": "VirouTest2"
+}
+```
+
+<hr>
+
+```
+[Get] /
+```
+
+>
+http://localhost:4200/
+
+<hr>
