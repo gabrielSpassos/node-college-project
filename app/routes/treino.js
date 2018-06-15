@@ -4,7 +4,7 @@ module.exports = function(application){
         const treinoDAO = application.app.models.treinoDAO;
 
         treinoDAO.getTreino(function(err, result){
-            res.render('treino/meuTreino', {treino : result});
+            res.render('testeHtml/TelaFinalTest', {treino : result});
         });
 
     });
