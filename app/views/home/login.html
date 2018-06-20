@@ -1,0 +1,99 @@
+<!DOCTYPE hmtl>
+<head lang="pt-BB">
+    <meta charset="UTF-8"/>
+    <title>Gym-Service</title>
+   
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+	<script src="myScript.js"></script>
+
+<style>
+
+b,h1,h2,p {font-family: "Lato", sans-serif;
+	color: white;
+	font-size: 20px;}
+/*--body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+} */
+
+/* Efeito Parallax Effect */
+/*.bgimg-1 {
+    background-position: center;
+    /*background-repeat: no-repeat;
+    /*background-size: cover;
+} */
+
+.backImage {
+    background-image: url('backgym.jpg');
+	min-height: 100%;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+#title {
+	margin-top: 50px;
+}
+
+.input-group{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 200px;
+}
+
+#saudacao{
+	margin-left: 30px;
+}
+
+</style>
+<script>
+	angular.module("listaCpfs", []);
+	angular.module("listaCpfs").controller("listaCpfsCrtl",
+	function($scope, $http){
+
+					$scope.app= "Lista de Cpf";
+					$scope.treinos = [];
+					$scope.cpfs = [];
+
+	});
+	
+</script>
+    
+</head>
+<body>   
+	<div class="backImage w3-display-container w3-text-white">
+	  <div id="title" class="w3-display-topmiddle w3-jumbo">
+		<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">ACADEMIA <span class="w3-hide-small">BOA FORMA</span> 
+	  </div>
+	  <div id="hel" class="w3-display-middle w3-container">
+		<form class="w3-display-middle" name="loginForm">
+			<fieldset>
+				<span id="saudacao" class="w3-center w3-padding w3-xlarge w3-black w3-text-white w3-animate-opacity">Bem Vindo!</span> 
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+					//<input id="login" type="text" class="form-control" name="login" placeholder="Usuário">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+					//<input id="password" type="password" class="form-control" name="password" placeholder="Senha">
+				</div>
+				<a href="navigation.html" id="loginButton" class="w3-button w3-block w3-white w3-round">Entrar</a>
+			</fieldset>
+		</form>
+		
+	  </div>
+	</div>                 
+</body>
+
