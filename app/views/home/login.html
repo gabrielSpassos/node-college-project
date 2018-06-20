@@ -66,25 +66,6 @@ b,h1,h2,p {font-family: "Lato", sans-serif;
 					$scope.app= "Lista de Cpf";
 					$scope.treinos = [];
 					$scope.cpfs = [];
-			
-					var carregarTreinos = function () {
-							$http.get("http://localhost:3000/treinos").then(function (response) {
-								  $scope.treinos = response.data;  
-							}).catch(function (response) {
-									$scope.message = "aconteceu um erro: " + response;
-									
-							});      
-					};
-
-					
-					
-		$scope.adicionarTreino = function (treino){
-		   $http.post("http://localhost:3000/treinos", treino).then(function (response) {
-			delete $scope.treino;
-			$scope.treinoForm.$setPristine();
-		   });          
-		};
-	
 
 	});
 	
