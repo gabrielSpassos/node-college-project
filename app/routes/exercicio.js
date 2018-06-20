@@ -15,8 +15,8 @@ module.exports = function(application){
 
         exercicioDAO.getExerciciosByIdTreino(idTreino, function(err, result){
             if(result.length > 0){
-                res.render('treino/consultTreinoExerc2', {
-                    treinoExerc : result,
+                res.render('testeHtml/TelaFinalTest', {
+                    treinoExerc: result,
                 });
             }else{
                 res.render('error/error', {

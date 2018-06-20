@@ -23,7 +23,7 @@
        
     </style>
     <script>
-        angular.module("listaTreinos", []);
+        /*angular.module("listaTreinos", []);
         angular.module("listaTreinos").controller("listaTreinosCtrl", 
         function($scope, $http){
             $scope.app = "Lista de Treinos";
@@ -38,9 +38,23 @@
             };
         
             carregarTreinos();
-        });
+        });*/
 
-        function mostraPeito(){
+        function mostraPeito() {
+        var x = document.getElementById("mostrarPeito");
+        if (x.style.display === "none") {
+            document.location = "/exercicios/1";
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+        //window.location = "http://localhost/"
+        } 
+
+        function postTreinos(){
+            var x = document.getElementById("xyz");
+
+            
 
         }
     </script>
@@ -68,7 +82,7 @@
                               <div class="collapse navbar-collapse" id="myNavbar">
                                 <ul class="nav navbar-nav">
                                   <li>
-                                    <a href="#">Segunda</a>
+                                    <a href="/usuarios/1/exercicios">Segunda</a>
                                   </li>
                                   <li><a href="#">Terça</a></li>
                                   <li><a href="#">Quarta</a></li>
@@ -101,8 +115,6 @@
 
                         </tr>
                         <tr>
-                            <td><%= treino[0].id%></td>
-                            <td><%= treino[0].nomeTreino%></td>
                             <td>{{treino.exercicios}}</td> 
                             <td>{{treino.dia}}</td>
                             <td>{{treino.repeticoes}}</td>
@@ -113,7 +125,7 @@
                     </table>
                     <div>
                         <p>Escolha seu treino:</p>
-                        <button onclick="mostraPeito" type="button" class="btn btn-primary">Treino de Peito</button>
+                        <button onclick="mostraPeito()" type="button" class="btn btn-primary">Treino de Peito</button>
                         <button onclick="mostraCostas" type="button" class="btn btn-primary">Treino de Costas</button>
                         <button onclick="mostraPernas" type="button" class="btn btn-primary">Treino de Pernas</button>
                         <button onclick="mostraBiceps" type="button" class="btn btn-primary">Treino de Biceps</button>
@@ -121,6 +133,32 @@
                         <button onclick="mostraOmbros" type="button" class="btn btn-primary">Treino de Ombros</button>
                         <button onclick="mostraAbdominal" type="button" class="btn btn-primary">Treino de Abdominal</button>
 
+
+                    </div>
+                    <div class="container"id="mostrarPeito">
+                        <div class="row">
+                            <table>
+                                    <tr>
+                                        <td>|ID|</td>
+                                        <td>|ID do Treino|</td>
+                                        <td>|Nome do Treino|</td>
+                                        <td>|ID do Exercicio|</td>
+                                        <td>|Nome do Exercicio|</td>
+                                    </tr>
+                                        <%for(var i=0; i<treinoExerc.length; i++){ %>
+                                            <tr>
+                                            <td><%= treinoExerc[i].id %></td> 
+                                            <td><%= treinoExerc[i].id_treino %></td>
+                                            <td><%= treinoExerc[i].nomeTreino %></td>
+                                            <td><%= treinoExerc[i].id_exercicio %></td>
+                                            <td> <a onclick="postTreino()"><%= treinoExerc[i].nomeExercicio %></a>
+                                            </td>
+                                            </tr>
+                                        <% } %>
+                                
+                                </table> 
+                        </div>
+                        
 
                     </div>
                 
