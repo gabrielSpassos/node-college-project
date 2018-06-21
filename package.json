@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Node App ",
   "main": "app.js",
+  "start": "nodemon",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
