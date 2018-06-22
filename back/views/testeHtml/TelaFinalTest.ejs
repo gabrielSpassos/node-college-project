@@ -145,13 +145,13 @@
                                         <td>|ID do Exercicio|</td>
                                         <td>|Nome do Exercicio|</td>
                                     </tr>
-                                        <%for(var i=0; i<treinoExerc.length; i++){ %>
+                                        <%for(var i=0; i<treino.length; i++){ %>
                                             <tr>
-                                            <td><%= treinoExerc[i].id %></td> 
-                                            <td><%= treinoExerc[i].id_treino %></td>
-                                            <td><%= treinoExerc[i].nomeTreino %></td>
-                                            <td><%= treinoExerc[i].id_exercicio %></td>
-                                            <td> <a onclick="postTreino()"><%= treinoExerc[i].nomeExercicio %></a>
+                                            <td><%= treino[i].id %></td>
+                                            <td><%= treino[i].id_treino %></td>
+                                            <td><%= treino[i].nomeTreino %></td>
+                                            <td><%= treino[i].id_exercicio %></td>
+                                            <td> <a onclick="postTreino()"><%= treino[i].nomeExercicio %></a>
                                             </td>
                                             </tr>
                                         <% } %>
