@@ -51,6 +51,15 @@
         //window.location = "http://localhost/"
         } 
 
+        function mostraCostas() {
+        var x = document.getElementById("mostrarCostas");
+        if (x.style.display === "none") {
+            document.location = "/exercicios/2";
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+
         function postTreinos(){
             var x = document.getElementById("xyz");
 
@@ -70,34 +79,35 @@
             <div class="col-lg-12">
                     
                     <nav class="navbar navbar-inverse">
-                            <div class="container-fluid">
-                              <div class="navbar-header">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                  <span class="icon-bar"></span>
-                                  <span class="icon-bar"></span>
-                                  <span class="icon-bar"></span>                        
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>                        
                                 </button>
                                 <a class="navbar-brand" href="#">Treinos</a>
-                              </div>
-                              <div class="collapse navbar-collapse" id="myNavbar">
+                            </div>
+                            <div class="collapse navbar-collapse" id="myNavbar">
                                 <ul class="nav navbar-nav">
-                                  <li>
+                                    <li>
                                     <a href="/usuarios/1/exercicios">Segunda</a>
-                                  </li>
-                                  <li><a href="#">Terça</a></li>
-                                  <li><a href="#">Quarta</a></li>
-                                  <li><a href="#">Quinta</a></li>
-                                  <li><a href="#">Sexta</a></li>
-                                  <li><a href="#">Sábado</a></li>
+                                    </li>
+                                    <li><a href="#">Terça</a></li>
+                                    <li><a href="#">Quarta</a></li>
+                                    <li><a href="#">Quinta</a></li>
+                                    <li><a href="#">Sexta</a></li>
+                                    <li><a href="#">Sábado</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                                 </ul>
-                              </div>
                             </div>
-                          </nav>
+                        </div>
+                    </nav>
             </div>           
+        </div>
     </div>
     <div class="container">
         <div class="row">
@@ -137,13 +147,13 @@
                     </div>
                     <div class="container"id="mostrarPeito">
                         <div class="row">
-                            <table>
+                            <table class="table table-bordered">
                                     <tr>
-                                        <td>|ID|</td>
-                                        <td>|ID do Treino|</td>
-                                        <td>|Nome do Treino|</td>
-                                        <td>|ID do Exercicio|</td>
-                                        <td>|Nome do Exercicio|</td>
+                                        <td>ID</td>
+                                        <td>ID do Treino</td>
+                                        <td>Nome do Treino</td>
+                                        <td>ID do Exercicio|</td>
+                                        <td>Nome do Exercicio</td>
                                     </tr>
                                         <%for(var i=0; i<treino.length; i++){ %>
                                             <tr>
@@ -158,55 +168,37 @@
                                 
                                 </table> 
                         </div>
-                        
-
                     </div>
-                
-                </div>
+
+                        <div class="container"id="mostrarCostas">
+                        <div class="row">
+                            <table class="table table-bordered">
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>ID do Treino</td>
+                                        <td>Nome do Treino</td>
+                                        <td>ID do Exercicio</td>
+                                        <td>Nome do Exercicio</td>
+                                    </tr>
+                                        <%for(var i=0; i<treino.length; i++){ %>
+                                            <tr>
+                                            <td><%= treino[i].id %></td>
+                                            <td><%= treino[i].id_treino %></td>
+                                            <td><%= treino[i].nomeTreino %></td>
+                                            <td><%= treino[i].id_exercicio %></td>
+                                            <td> <a onclick="postTreino()"><%= treino[i].nomeExercicio %></a>
+                                            </td>
+                                            </tr>
+                                        <% } %>
+                                
+                                </table> 
+                        </div>
+                    </div>
+            
                 <div class="col-lg-1"></div>
         </div>
     </div>
-    
+    </div>
+    </div>
 </body>
 </html>
-
-
-<!--
-<div class="container-fluid">
-  <h1>Hello World!</h1>
-  <p>Resize the browser window to see the effect.</p>
-  <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
-  <div class="row">
-    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
-    <div class="col-sm-3" style="background-color:lavenderblush;">.col-sm-3</div>
-    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
-    <div class="col-sm-3" style="background-color:lavenderblush;">.col-sm-3</div>
-  </div>
-</div>
-<nav class="navbar-expand-md bg-dark navbar-dark">
-                        
-                        <a class="navbar-brand" href="#">Treinos</a>
-                        
-                       
-                        <ul class="navbar-nav navbar-expand-md ">
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-secondary">Segunda-Feira</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-secondary">Terça-Feira</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-secondary">Quarta-Feira</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-secondary">Quinta-Feira</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-secondary">Sexta-Feira</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-secondary">Sábado</button>
-                            </li>
-                        </ul>
-                    </nav>
--->
