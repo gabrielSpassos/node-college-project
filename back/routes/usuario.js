@@ -1,8 +1,7 @@
 module.exports = function(application){
 
     application.get('/usuarios/:id/exercicios', function(req, res){
-        
-        const usuarioDAO = application.app.models.usuarioDAO;
+        const usuarioDAO = application.back.models.usuarioDAO;
 
         const idUsuario = req.params.id;
         const idDia = req.query.idDia;
@@ -21,8 +20,7 @@ module.exports = function(application){
     });
 
     application.put('/usuarios/:id/exercicios', function (req, res) {
-        
-        const usuarioDAO = application.app.models.usuarioDAO;
+        const usuarioDAO = application.back.models.usuarioDAO;
 
         const idUsuario = req.params.id;
         const idTreinoUsuarioExercicio = req.body.idTreinoUsuarioExercicio;
@@ -46,8 +44,7 @@ module.exports = function(application){
     });
 
     application.post('/usuarios/:id/exercicios', function (req, res) {
-        
-        const usuarioDAO = application.app.models.usuarioDAO;
+        const usuarioDAO = application.back.models.usuarioDAO;
 
         const idUsuario = req.params.id;
 		const idDia = req.body.idDia;

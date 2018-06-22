@@ -1,25 +1,22 @@
 //declaração do express
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //declaração do consign
-var consign = require('consign');
+const consign = require('consign');
 
 // declarando EJS
 app.set('view engine', 'ejs');
-app.set ('views', './app/views');
-
-//usando Consign
-consign().include('./app/routes').into(app);
+app.set ('views', './back/views');
 
 consign()
-.include('./app/routes')
+.include('./back/routes')
 .then('config/dbMysql.js')
-.then('app/models')
+.then('back/models')
 .into(app);
 
 module.exports = app; //exporta o modulo

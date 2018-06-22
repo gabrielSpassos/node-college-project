@@ -1,7 +1,7 @@
 module.exports = function(application){
 
     application.get('/treinos', function(req, res){
-        const treinoDAO = application.app.models.treinoDAO;
+        const treinoDAO = application.back.models.treinoDAO;
 
         treinoDAO.getTreino(function(err, result){
             res.render('testeHtml/TelaFinalTest', {treino : result});
@@ -10,7 +10,7 @@ module.exports = function(application){
     });
 
     application.get('/treinos/:idTreino', function(req, res){
-        const treinoDAO = application.app.models.treinoDAO;
+        const treinoDAO = application.back.models.treinoDAO;
         let idTreino = req.params.idTreino;
 
         treinoDAO.getTreinoById(idTreino, function(err, result){
@@ -27,7 +27,7 @@ module.exports = function(application){
     });
 
     application.post('/treinos', function(req, res) {
-        const treinoDAO = application.app.models.treinoDAO;
+        const treinoDAO = application.back.models.treinoDAO;
         const nomeTreino = req.body.nomeTreino;
         treinoDAO.saveTreino(nomeTreino);
         treinoDAO.getLastTreinoSaved(function(error, result){
@@ -45,7 +45,7 @@ module.exports = function(application){
     });
 
     application.put('/treinos/:idTreino', function(req, res) {
-        const treinoDAO = application.app.models.treinoDAO;
+        const treinoDAO = application.back.models.treinoDAO;
         const nomeTreino = req.body.nomeTreino;
         let idTreino = req.params.idTreino;
 

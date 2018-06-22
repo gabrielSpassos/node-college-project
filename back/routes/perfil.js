@@ -1,7 +1,7 @@
 module.exports = function(application){
 
     application.get('/perfil/:idUsuario', function(req, res){
-        const perfilDAO = application.app.models.perfilDAO;
+        const perfilDAO = application.back.models.perfilDAO;
         const idUsuario = parseInt(req.params.idUsuario);
        
         perfilDAO.getPerfilByID(idUsuario, function(err, result){
@@ -18,7 +18,7 @@ module.exports = function(application){
     });
 
     application.put('/perfil/:id', function (req, res) {
-        let perfilDAO = application.app.models.perfilDAO;
+        let perfilDAO = application.back.models.perfilDAO;
       
         const idUsuario = req.params.id;
         const nomecompleto = req.body.nomecompleto;

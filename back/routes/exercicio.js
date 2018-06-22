@@ -1,7 +1,7 @@
 module.exports = function(application){
 
     application.get('/exercicios', function(req, res){
-        const exercicioDAO = application.app.models.exercicioDAO;
+        const exercicioDAO = application.back.models.exercicioDAO;
 
         exercicioDAO.getExercicios(function(err, result){
             res.render('treino/consultTreinoExerc', {treinoExerc : result});
@@ -10,7 +10,7 @@ module.exports = function(application){
     });
 
     application.get('/exercicios/:idTreino', function(req, res){
-        const exercicioDAO = application.app.models.exercicioDAO;
+        const exercicioDAO = application.back.models.exercicioDAO;
         let idTreino = req.params.idTreino;
 
         exercicioDAO.getExerciciosByIdTreino(idTreino, function(err, result){
