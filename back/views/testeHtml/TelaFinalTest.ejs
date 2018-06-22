@@ -59,6 +59,7 @@
         } else {
             x.style.display = "none";
         }
+    }
 
         function postTreinos(){
             var x = document.getElementById("xyz");
@@ -136,7 +137,7 @@
                     <div>
                         <p>Escolha seu treino:</p>
                         <button onclick="mostraPeito()" type="button" class="btn btn-primary">Treino de Peito</button>
-                        <button onclick="mostraCostas" type="button" class="btn btn-primary">Treino de Costas</button>
+                        <button onclick="mostraCostas()" type="button" class="btn btn-primary">Treino de Costas</button>
                         <button onclick="mostraPernas" type="button" class="btn btn-primary">Treino de Pernas</button>
                         <button onclick="mostraBiceps" type="button" class="btn btn-primary">Treino de Biceps</button>
                         <button onclick="mostraTriceps" type="button" class="btn btn-primary">Treino de Triceps</button>
@@ -148,6 +149,9 @@
                     <div class="container"id="mostrarPeito">
                         <div class="row">
                             <table class="table table-bordered">
+                                    <tr>
+                                        <th colspan="5"> Treino de Peito</th>
+                                    </tr>
                                     <tr>
                                         <td>ID</td>
                                         <td>ID do Treino</td>
@@ -174,6 +178,9 @@
                         <div class="row">
                             <table class="table table-bordered">
                                     <tr>
+                                        <th colspan="5"> Treino de Costas</th>
+                                    </tr>
+                                    <tr>
                                         <td>ID</td>
                                         <td>ID do Treino</td>
                                         <td>Nome do Treino</td>
@@ -186,7 +193,7 @@
                                             <td><%= treino[i].id_treino %></td>
                                             <td><%= treino[i].nomeTreino %></td>
                                             <td><%= treino[i].id_exercicio %></td>
-                                            <td> <a onclick="postTreino()"><%= treino[i].nomeExercicio %></a>
+                                            <td><%= treino[i].nomeExercicio %></a>
                                             </td>
                                             </tr>
                                         <% } %>
@@ -198,7 +205,7 @@
                 <div class="col-lg-1"></div>
         </div>
     </div>
-    </div>
-    </div>
+</div>
+    
 </body>
 </html>
