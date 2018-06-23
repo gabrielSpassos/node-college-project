@@ -4,7 +4,7 @@ module.exports = function(application){
         const treinoDAO = application.back.models.treinoDAO;
 
         treinoDAO.getTreino(function(err, result){
-            res.render('testeHtml/TelaFinalTest', {treino : result});
+            res.render('teste/TelaFinalTest', {treino : result});
         });
 
     });
@@ -15,7 +15,7 @@ module.exports = function(application){
 
         treinoDAO.getTreinoById(idTreino, function(err, result){
             if(result.length > 0){
-                res.render('treino/test', {
+                res.render('treino/test', { //era treino/test
                     treino : result,
                 });
             }else{

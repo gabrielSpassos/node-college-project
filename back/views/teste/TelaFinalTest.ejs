@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Treinos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        .btn{
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        #mostrarPeito{
+            display:none; 
+        }
+        #mostrarCostas{
+            display: none;
+        }
+       
+    </style>
+    <script>
+        /*angular.module("listaTreinos", []);
+        angular.module("listaTreinos").controller("listaTreinosCtrl", 
+        function($scope, $http){
+            $scope.back = "Lista de Treinos";
+            $scope.treinos = [];
+            var carregarTreinos = function() {
+                $http.get("localhost:4200/treinos").then(function (response) {
+                     $scope.treino = response.data;
+                }).catch(function (response) {
+                    $scope.message = "aconteceu um erro: " + response;
+                });
+                    
+            };
+        
+            carregarTreinos();
+        });*/
+
+        function mostraPeito() {
+        var x = document.getElementById("mostrarPeito");
+        if (x.style.display === "none") {
+            document.location = "/exercicios/1";
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+        //window.location = "http://localhost/"
+        } 
+
+        function mostraCostas() {
+        var x = document.getElementById("mostrarCostas");
+        if (x.style.display === "none") {
+            document.location = "/exercicios/2";
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+        function postTreinos(){
+            var x = document.getElementById("xyz");
+
+            
+
+        }
+        //funfando
+        function hideandshow( id ){
+            var el = document.getElementById( id );
+            if( el.style.display != 'none' )
+                el.style.display = 'none';
+            else
+                el.style.display = 'inline';
+        }
+</script>
+    </script>
+
+</head>
+<body ng-controller="listaTreinosCtrl">
+    <div class="jumbotron text-center" style="margin-bottom:0">
+            <h1>Gym Service</h1> 
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>                        
+                            </button>
+                            <a class="navbar-brand" href="#">Treinos</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                <a href="/usuarios/01010101010/exercicios?idDia=1">Segunda</a>
+                                </li>
+                                <li><a href="/usuarios/01010101010/exercicios?idDia=2">Terça</a></li>
+                                <li><a href="/usuarios/01010101010/exercicios?idDia=3">Quarta</a></li>
+                                <li><a href="/usuarios/01010101010/exercicios?idDia=4">Quinta</a></li>
+                                <li><a href="/usuarios/01010101010/exercicios?idDia=5">Sexta</a></li>
+                                <li><a href="/usuarios/01010101010/exercicios?idDia=6">Sábado</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>           
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        
+                
+                    </table>
+                    <div>
+                        <p>Escolha seu treino:</p>
+                        <button onclick="hideandshow('mostrarPeito'); return false;" type="button" class="btn btn-primary">Treino de Peito</button>
+                        <button onclick="hideandshow('mostrarCostas'); return false;" type="button" class="btn btn-primary">Treino de Costas</button>
+                        <button onclick="mostraPernas" type="button" class="btn btn-primary">Treino de Pernas</button>
+                        <button onclick="mostraBiceps" type="button" class="btn btn-primary">Treino de Biceps</button>
+                        <button onclick="mostraTriceps" type="button" class="btn btn-primary">Treino de Triceps</button>
+                        <button onclick="mostraOmbros" type="button" class="btn btn-primary">Treino de Ombros</button>
+                        <button onclick="mostraAbdominal" type="button" class="btn btn-primary">Treino de Abdominal</button>
+                        <a href="/exercicios" >
+                            Click mostrar todos treinos
+                            </a>
+                    </div>
+
+                    <div class="container" id="mostrarPeito">
+                        <div class="row">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th colspan="5"> Treino de Peito</th>
+                                </tr>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>ID do Treino</td>
+                                    <td>Nome do Treino</td>
+                                    <td>ID do Exercicio|</td>
+                                    <td>Nome do Exercicio</td>
+                                </tr>
+                                    <%for(var i=0; i<treino.length; i++){ %>
+                                        <tr>
+                                        <td><%= treino[i].id %></td>
+                                        <td><%= treino[i].id_treino %></td>
+                                        <td><%= treino[i].nomeTreino %></td>
+                                        <td><%= treino[i].id_exercicio %></td>
+                                        <td> <a onclick="postTreino()"><%= treino[i].nomeExercicio %></a>
+                                        </td>
+                                        </tr>
+                                    <% } %>
+                                
+                            </table> 
+                        </div>
+                    </div>
+
+                    <div class="container"id="mostrarCostas">
+                        <div class="row">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th colspan="5"> Treino de Costas</th>
+                                </tr>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>ID do Treino</td>
+                                    <td>Nome do Treino</td>
+                                    <td>ID do Exercicio</td>
+                                    <td>Nome do Exercicio</td>
+                                </tr>
+                                <%for(var i=0; i<treino.length; i++){ %>
+                                <tr>
+                                    <td><%= treino[i].id %></td> 
+                                    <td><%= treino[i].id_treino %></td>
+                                    <td><%= treino[i].nomeTreino %></td>
+                                    <td><%= treino[i].id_exercicio %></td>
+                                    <td><%= treino[i].nomeExercicio %></td>
+                                </tr>
+                                <% } %>
+                            
+                            </table> 
+                        </div>
+                    </div>
+            
+                <div class="col-lg-1"></div>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

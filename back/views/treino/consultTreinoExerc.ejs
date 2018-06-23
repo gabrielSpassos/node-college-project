@@ -3,29 +3,45 @@
 <head>
     <title>Gym-Service</title>
     <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-    <h2>Teste GET ALL TREINOS E SEUS EXERCICIOS</h2>
- 
-<table>
-    <tr>
-        <td>|ID|-------</td>
-        <td>|ID do Treino|-------</td>
-        <td>|Nome do Treino|-------</td>
-        <td>|ID do Exercicio|-------</td>
-        <td>|Nome do Exercicio|-------</td>
-    </tr>
-        <%for(var i=0; i<treinoExerc.length; i++){ %>
-         <tr>
-            <td><%= treinoExerc[i].id %></td> 
-            <td><%= treinoExerc[i].id_treino %></td>
-            <td><%= treinoExerc[i].nomeTreino %></td>
-            <td><%= treinoExerc[i].id_exercicio %></td>
-            <td><%= treinoExerc[i].nomeExercicio %></td>
-         </tr>
-       <% } %>
-
-</table>
+    
+<div class="container" id="mostrarPeito">
+    <div class="row">
+            <a href="/treinos">Voltar para tela principal</a>
+        <table class="table table-bordered">
+            <tr>
+                <th colspan="5">Teste GET ALL TREINOS E SEUS EXERCICIOS</tr>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>ID do Treino</td>
+                <td>Nome do Treino</td>
+                <td>ID do Exercicio|</td>
+                <td>Nome do Exercicio</td>
+            </tr>
+            <%for(var i=0; i<treinoExerc.length; i++){ %>
+            <tr>
+                <td><%= treinoExerc[i].id %></td> 
+                <td><%= treinoExerc[i].id_treino %></td>
+                <td><%= treinoExerc[i].nomeTreino %></td>
+                <td><%= treinoExerc[i].id_exercicio %></td>
+                <td><%= treinoExerc[i].nomeExercicio %></td>
+            </tr>
+            <% } %>
+            
+            </table> 
+            
+    </div>
+</div>
 
 
 

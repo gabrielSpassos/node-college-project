@@ -4,7 +4,7 @@ module.exports = function(application){
         const exercicioDAO = application.back.models.exercicioDAO;
 
         exercicioDAO.getExercicios(function(err, result){
-            res.render('treino/consultTreinoExerc', {treinoExerc : result});
+            res.render('treino/consultTreinoExerc', {treinoExerc : result});  
         });
 
     });
@@ -15,8 +15,7 @@ module.exports = function(application){
 
         exercicioDAO.getExerciciosByIdTreino(idTreino, function(err, result){
             if(result.length > 0){
-                res.render('testeHtml/TelaFinalTest', {
-                    treinoExerc: result,
+                res.render('treino/consultTreinoExerc2', {  
                 });
             }else{
                 res.render('error/error', {
