@@ -11,7 +11,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  
+<style>
+    th{
+        text-align: center;
+    }
+</style>
     
 
 </head>
@@ -45,7 +49,7 @@
                                     <li><a href="/usuarios/01010101010/exercicios?idDia=6">Sábado</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                    <li><a href="/perfil/01010101010"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
                                     <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                                 </ul>
                             </div>
@@ -58,31 +62,11 @@
             <div class="row">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-12">
-                        <table class="table table-bordered">
-                            
-                    
-                        </table>
-                        <div>
-                            <p>Escolha seu treino:</p>
-                            <button onclick="hideandshow('mostrarPeito'); return false;" type="button" class="btn btn-primary">Treino de Peito</button>
-                            <button onclick="hideandshow('mostrarCostas'); return false;" type="button" class="btn btn-primary">Treino de Costas</button>
-                            <button onclick="mostraPernas" type="button" class="btn btn-primary">Treino de Pernas</button>
-                            <button onclick="mostraBiceps" type="button" class="btn btn-primary">Treino de Biceps</button>
-                            <button onclick="mostraTriceps" type="button" class="btn btn-primary">Treino de Triceps</button>
-                            <button onclick="mostraOmbros" type="button" class="btn btn-primary">Treino de Ombros</button>
-                            <button onclick="mostraAbdominal" type="button" class="btn btn-primary">Treino de Abdominal</button>
-                            <button href="/exercicios" type="button" class="btn btn-primary">Mostrar todos treinos</button>
-                            <a href="/exercicios" >
-                                Click mostrar todos treinos
-                                </a>
-                        </div>
-    
-    
-                        <div class="container"id="mostrarCostas">
+                        <div class="container">
                             <div class="row">
                                 <table class="table table-bordered">
                                         <tr>
-                                            <th colspan="5">Teste GET ALL TREINOS E SEUS EXERCICIOS</tr>
+                                            <th colspan="5">Todos Treinos</tr>
                                         </tr>
                                         <tr>
                                             <td>ID</td>
@@ -119,27 +103,3 @@
 
 </body>
 </html>
-
-
-<table class="table table-bordered">
-        <tr>
-            <th colspan="5">Teste GET ALL TREINOS E SEUS EXERCICIOS</tr>
-        </tr>
-        <tr>
-            <td>ID</td>
-            <td>ID do Treino</td>
-            <td>Nome do Treino</td>
-            <td>ID do Exercicio|</td>
-            <td>Nome do Exercicio</td>
-        </tr>
-        <%for(var i=0; i<treinoExerc.length; i++){ %>
-        <tr>
-            <td><%= treinoExerc[i].id %></td> 
-            <td><%= treinoExerc[i].id_treino %></td>
-            <td><%= treinoExerc[i].nomeTreino %></td>
-            <td><%= treinoExerc[i].id_exercicio %></td>
-            <td><%= treinoExerc[i].nomeExercicio %></td>
-        </tr>
-        <% } %>
-        
-        </table> 

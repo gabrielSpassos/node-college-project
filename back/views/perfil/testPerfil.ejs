@@ -3,15 +3,166 @@
 <head>
     <title>Gym-Service</title>
     <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+            .user-row {
+        margin-bottom: 14px;
+    }
+
+    .user-row:last-child {
+        margin-bottom: 0;
+    }
+
+    .dropdown-user {
+        margin: 13px 0;
+        padding: 5px;
+        height: 100%;
+    }
+
+    .dropdown-user:hover {
+        cursor: pointer;
+    }
+
+    .table-user-information > tbody > tr {
+        border-top: 1px solid rgb(161, 152, 152);
+    }
+
+    .table-user-information > tbody > tr:first-child {
+        border-top: 0;
+    }
+
+
+    .table-user-information > tbody > tr > td {
+        border-top: 0;
+        border-color: black;
+    }
+    .toppad
+    {margin-top:20px;
+    }
+    .panel-heading{
+        background-color: darkgray;
+    }
+    </style>
 </head>
 <body>
-    <h2>Teste GET , POST and PATCH by ID</h2>
-    <p><%= perfilVar[0].cpf_usuario %></p>
-    <p><%= perfilVar[0].nomecompleto %></p>
-    <p><%= perfilVar[0].telefone %></p>
-    <p><%= perfilVar[0].peso %></p>
-    <p><%= perfilVar[0].altura %></p>
-    <p><%= perfilVar[0].nome_modalidade %></p>
-    <p><%= perfilVar[0].valor %></p>
+
+        <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Gym Service</h1> 
+    </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>                        
+                        </button>
+                        <a class="navbar-brand" href="#">Treinos</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li>
+                            <a href="/usuarios/01010101010/exercicios?idDia=1">Segunda</a>
+                            </li>
+                            <li><a href="/usuarios/01010101010/exercicios?idDia=2">Terça</a></li>
+                            <li><a href="/usuarios/01010101010/exercicios?idDia=3">Quarta</a></li>
+                            <li><a href="/usuarios/01010101010/exercicios?idDia=4">Quinta</a></li>
+                            <li><a href="/usuarios/01010101010/exercicios?idDia=5">Sexta</a></li>
+                            <li><a href="/usuarios/01010101010/exercicios?idDia=6">Sábado</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/treinos"><span class="glyphicon glyphicon-user"></span> Voltar</a></li>
+                            <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>           
+    </div>
+</div>
+    <div class="container">
+            <div class="row">
+            <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+                <br>
+            </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+            
+            
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                    <h3 class="panel-title"><%= perfilVar[0].nomecompleto %></h3>
+                    </div>
+                    <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://scontent.fpoa8-2.fna.fbcdn.net/v/t1.0-9/18301733_1109958879105532_7704054622335511399_n.jpg?_nc_cat=0&_nc_eui2=AeET1Erl9hcDnS71ea5bbWd9k4eXLMAUQL8RnCJ_nd-Zw1s7KPjCK_vayHHYXloY-2RUHLzY39YOBBcoBdUU0kHB7JvIb-rcU1ZcUlMvab7IOA&oh=d58171e0ee9a2ca3f241e4ebe7737fd6&oe=5BEC09AE" class="img-circle img-responsive"> </div>
+                        <div class=" col-md-9 col-lg-9 "> 
+                        <table class="table table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>Objetivo:</td>
+                                <td>Hipertrofia</td>
+                            </tr>
+                            <tr>
+                                <td>Cpf:</td>
+                                <td><p><%= perfilVar[0].cpf_usuario %></p></td>
+                            </tr>
+                            <tr>
+                                <td>Telefone</td>
+                                <td><p><%= perfilVar[0].telefone %></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                
+                            </tr>
+                            <tr>
+                                <td>Peso:</td>
+                                <td><p><%= perfilVar[0].peso %> kg</p></td>
+                            </tr>
+                            <tr> 
+                            </tr>
+                                <td>Altura:</td>
+                                <td><p><%= perfilVar[0].altura %></p></td>
+                                    
+                            </tr>
+                            <tr>
+                                <td>Plano:</td>
+                                <td><p><%= perfilVar[0].nome_modalidade %></p></td>
+                            </tr>
+                            <tr>
+                                <td>Valor:</td>
+                                <td><p>R$ <%= perfilVar[0].valor %></p></td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    
+                        </div>
+                    </div>
+                    </div>
+                        <div class="panel-footer">
+                                <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                                <span class="pull-right">
+                                    <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                                    <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                                </span>
+                            </div>
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+
 </body>
 </html>
+
+
